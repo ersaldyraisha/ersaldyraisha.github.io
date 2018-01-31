@@ -1,0 +1,44 @@
+section {
+  position: relative;
+  background: #fff;
+}
+
+.main-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.main-section-img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 30%;
+}
+
+.second-section {
+  margin-top: 100vh;
+}
+
+.main-section-scroller-container {
+  margin-top: $space * 4;
+}
+
+.main-section-arrow {
+  animation: scroll infinite 2s;
+  margin-right: $space / 6;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}

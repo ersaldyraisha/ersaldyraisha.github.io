@@ -1,0 +1,56 @@
+.sitenav {
+  position: fixed;
+  right: 3 * $space;
+  top: 2 * $space;
+  z-index: 15;
+}
+
+.sitenav-list {
+  
+}
+
+.sitenav-item {
+  position: relative;
+  display: block;
+
+}
+
+.sitenav-anchor {
+  display: block;
+  font-weight: 700;
+  
+  &:before {
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-20px);
+    opacity: 0; 
+    transition: all 0.3s ease;
+    font-family: 'FontAwesome';
+  }
+  
+  &:hover {
+    &:before {
+      opacity: 1; 
+      transform: translateY(-50%) translateX(-10px);
+    }
+  }
+}
+
+.sitenav-anchor--about {
+  &:before {
+    content: '\f05a';
+  }
+}
+
+.sitenav-anchor--projects {
+  &:before {
+    content: '\f108';
+  }
+}
+
+.sitenav-anchor--contact {
+  &:before {
+    content: '\f095';
+  }
+}

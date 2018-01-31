@@ -16,6 +16,10 @@
 // Typography helper
 // ------------------------------------------------------------------------ //
 
+.text-jumbo {
+    font-size: 300%;
+}
+
 .text-left {
     text-align: left;
 }
@@ -84,11 +88,15 @@
     margin-bottom: $space;
 }
 
-.block-low {
+.block-half {
     margin-bottom: $space / 2;
+}
+
+.block-twice {
+    margin-bottom: $space * 2;
 }
 
 .full-screen {
     height: 100vh;
-    width: 100vw;
+    width: 100%;
 }

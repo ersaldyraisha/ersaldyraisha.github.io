@@ -2,7 +2,7 @@
 // Typography
 // ------------------------------------------------------------------------ //
 
-$base_font_size     : 16px;
+$base_font_size     : 17px;
 $base_line_height   : 1.6em;
 $base_font_family   : 'Circullar', sans-serif;
 $space              : $base_line_height;
@@ -23,10 +23,10 @@ $black30            : lighten($black, 70%);
 $black20            : lighten($black, 80%);
 $black10            : lighten($black, 90%);
 
-$link               : #0094ed;
-$link_hover         : darken($link, 10%);
+$link               : $black50;
+$link_hover         : darken($link, 20%);
 
-$selection_bg       : #b3d4fc;
+$selection_bg       : $black40;
 $selection_color    : $black;
 
 
