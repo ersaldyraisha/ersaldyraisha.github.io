@@ -12,12 +12,12 @@
 .sitenav-item {
   position: relative;
   display: block;
-
 }
 
 .sitenav-anchor {
   display: block;
   font-weight: 700;
+  color: $black;
   
   &:before {
     position: absolute;
@@ -26,7 +26,8 @@
     transform: translateY(-50%) translateX(-20px);
     opacity: 0; 
     transition: all 0.3s ease;
-    font-family: 'FontAwesome';
+    //font-family: 'FontAwesome';
+    content: '>';
   }
   
   &:hover {
@@ -37,7 +38,7 @@
   }
 }
 
-.sitenav-anchor--about {
+/* .sitenav-anchor--about {
   &:before {
     content: '\f05a';
   }
@@ -53,4 +54,4 @@
   &:before {
     content: '\f095';
   }
-}
+} */

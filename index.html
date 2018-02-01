@@ -35,7 +35,7 @@
   <![endif]-->
 
   <header>
-    <nav class="sitenav"> 
+    <nav class="sitenav hidden-mobile"> 
       <ul class="sitenav-list">
         <li class="sitenav-item">
           <a href="#!" class="sitenav-anchor sitenav-anchor--about">about</a>
@@ -51,7 +51,8 @@
   </header>
 
   <main>
-    <section class="main-section flexbox full-screen v-center">
+
+    <section class="main-section flexbox full-screen v-center is-active">
       <div class="container">
         <h1 class="text-jumbo no-margin">ersaldy raisha</h1>
         <h3>designer + developer</h3>
@@ -65,17 +66,74 @@
     
     <section class="second-section flexbox full-screen v-center">
       <div class="container">
-        <h1>about</h1>
+        <div class="block-twice"></div>
+        <h1 class="section-title">about</h1>
         <p>part-time designer / part-time developer / full-time learner.</p> 
-        <p class="block-double">specialized as a front-end developer, but also familiar with UI/UX design, software design pattern, project management, and video editing. started as a designer, but later pursued software engineering major at Institut Teknologi Sepuluh Nopember Surabaya.</p>
+        <p class="no-margin">specialized as a front-end developer, but also familiar with UI/UX design, software design pattern, project management, and video editing. started as a designer, but later pursued software engineering major at Institut Teknologi Sepuluh Nopember Surabaya.</p>
+      </div>
+      <img class="second-section-img" src="assets/img/section-bg.jpg" alt="section-bg">
+    </section>
+    
+    <section class="flexbox full-screen v-center">
+      <div class="container">
+        <h1 class="section-title">projects</h1>
+        <ul class="project-slider list-nostyle">
+          <li class="project-slider-item">
+            <a class="project-slider-anchor" href="#!">
+              <img class="slider-img block-half" src="http://via.placeholder.com/400x250" alt="">
+              <div class="slider-caption">
+                <h3 class="no-margin">Nama Project</h3>
+                <p>Application</p>
+              </div>
+            </a>
+          </li>
+          <li class="project-slider-item">
+            <a class="project-slider-anchor" href="#!">
+              <img class="slider-img block-half" src="http://via.placeholder.com/400x250" alt="">
+              <div class="slider-caption">
+                <h3 class="no-margin">Nama Project</h3>
+                <p>Application</p>
+              </div>
+            </a>
+          </li>
+          <li class="project-slider-item">
+            <a class="project-slider-anchor" href="#!">
+              <img class="slider-img block-half" src="http://via.placeholder.com/400x250" alt="">
+              <div class="slider-caption">
+                <h3 class="no-margin">Nama Project</h3>
+                <p>Application</p>
+              </div>
+            </a>
+          </li>
+          <li class="project-slider-item">
+            <a class="project-slider-anchor" href="#!">
+              <img class="slider-img block-half" src="http://via.placeholder.com/400x250" alt="">
+              <div class="slider-caption">
+                <h3 class="no-margin">Nama Project</h3>
+                <p>Application</p>
+              </div>
+            </a>
+          </li>
+          <li class="project-slider-item">
+            <a class="project-slider-anchor" href="#!">
+              <img class="slider-img block-half" src="http://via.placeholder.com/400x250" alt="">
+              <div class="slider-caption">
+                <h3 class="no-margin">Nama Project</h3>
+                <p>Application</p>
+              </div>
+            </a>
+          </li>
+        </ul>
       </div>
     </section>
+
   </main>
 
     
     
   <script>window.myPrefix = '';</script>
   <script src="assets/js/vendor/jquery.min.js"></script>
+  <script src="assets/js/vendor/slick.min.js"></script>
   <script src="https://cdn.polyfill.io/v2/polyfill.js?features=default,promise,fetch"></script>
   <script src="assets/js/main.min.js"></script>
 </body>

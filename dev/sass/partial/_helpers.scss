@@ -54,6 +54,12 @@
     display: none !important;
 }
 
+.hidden-mobile {
+    @media #{$mobile} {
+        display: none;
+    }
+}
+
 .visuallyhidden,
 .sr-only {
     border: 0;

@@ -2,6 +2,8 @@
 
 ((window, document, undefined) => {
 
+    const active = 'is-active'
+
     const path = {
         css: `${myPrefix}assets/css/`,
         js : `${myPrefix}assets/js/vendor/`
@@ -31,6 +33,37 @@
         objectFitPolyfill() {
             load(assets._objectFit).then( () => {
                 objectFitImages()
+            })
+        },
+
+        mainSection() {
+            let scrolled = window.pageYOffset
+            let secondSection = $('.second-section').offset().top
+            let $secondImg = $('.second-section-img')
+            let $mainSection = $('.main-section')
+            
+            $(window).on('scroll', e => {
+                scrolled = window.pageYOffset
+                if ( scrolled >= secondSection - 70 ) { 
+                    $secondImg.addClass(active)
+                }
+                if ( scrolled <= 0 && !$mainSection.hasClass(active)) {
+                    $mainSection.addClass(active)
+                }
+                else if ( scrolled > 0 && $mainSection.hasClass(active)) {
+                    $mainSection.removeClass(active)
+                }
+            })
+
+            //console.log(secondImgTop)
+        },
+
+        projectSlider() {
+            let $slider = $('.project-slider')
+
+            $slider.slick({
+                slidesToShow: 3,
+                arrows: false
             })
         }
     }
