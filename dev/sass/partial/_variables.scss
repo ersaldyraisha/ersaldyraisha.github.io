@@ -2,9 +2,9 @@
 // Typography
 // ------------------------------------------------------------------------ //
 
-$base_font_size     : 17px;
+$base_font_size     : 16px;
 $base_line_height   : 1.6em;
-$base_font_family   : 'Circullar', sans-serif;
+$base_font_family   : "Bookman Old Style", serif;
 $space              : $base_line_height;
 
 
@@ -12,7 +12,22 @@ $space              : $base_line_height;
 // Colors
 // ------------------------------------------------------------------------ //
 
-$black              : #222;
+$palettes: (
+    black: #212121,
+    grey: #808080,
+    red: #DB4646
+);
+
+@function palette($color) {
+    @if map-has-key($palettes, $color) {
+        @return map-get($palettes, $color);
+    } @else {
+        @warn "key `#{$color}` was not found. Falling back to #808080";
+        @return #808080;
+    }
+}
+
+$black              : #212121;
 $black90            : lighten($black, 10%);
 $black80            : lighten($black, 20%);
 $black70            : lighten($black, 30%);
@@ -23,11 +38,15 @@ $black30            : lighten($black, 70%);
 $black20            : lighten($black, 80%);
 $black10            : lighten($black, 90%);
 
-$link               : $black50;
-$link_hover         : darken($link, 20%);
+$link               : #DB4646;
+$link_hover         : darken($link, 10%);
 
-$selection_bg       : $black40;
+$selection_bg       : #b3d4fc;
 $selection_color    : $black;
+
+$grey               : #808080;
+$lightgrey          : #eee;
+$red                : #DB4646;
 
 
 
@@ -44,15 +63,7 @@ $medium_landscape   : "screen and (min-width: 48em) and (orientation: landscape)
 
 $large              : "screen and (min-width: 64em)";
 
-$retina             : "(-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 1.25dppx), (min-resolution: 120dpi)";
-
-$mobile             : "screen and (max-width: 500px)";
-
-
-
-
-
-
-
-
+$retina             : "(-webkit-min-device-pixel-ratio: 1.3),
+                       (min-resolution: 1.25dppx),
+                       (min-resolution: 120dpi)";
 

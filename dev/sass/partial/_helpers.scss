@@ -16,10 +16,6 @@
 // Typography helper
 // ------------------------------------------------------------------------ //
 
-.text-jumbo {
-    font-size: 300%;
-}
-
 .text-left {
     text-align: left;
 }
@@ -39,6 +35,14 @@
     overflow: hidden;
 }
 
+.text-caps {
+    text-transform: uppercase;
+}
+
+.text-normal {
+    font-weight: normal;
+}
+
 
 // Visual helper
 // ------------------------------------------------------------------------ //
@@ -52,12 +56,6 @@
 
 .hidden {
     display: none !important;
-}
-
-.hidden-mobile {
-    @media #{$mobile} {
-        display: none;
-    }
 }
 
 .visuallyhidden,
@@ -86,23 +84,27 @@
     visibility: hidden;
 }
 
-.no-margin {
-    margin-bottom: 0;
-}
-
-.block {
-    margin-bottom: $space;
-}
-
-.block-half {
-    margin-bottom: $space / 2;
-}
-
-.block-twice {
-    margin-bottom: $space * 2;
-}
-
-.full-screen {
-    height: 100vh;
+.full-width {
     width: 100%;
+}
+
+$gaps: 0, 1, 2, 3, 4, 8, 12, 16, 20, 24;
+
+@each $gap in $gaps {
+    .mb-#{$gap} { margin-bottom: $gap * $space !important; }
+    .p-#{$gap} { padding: $gap * $space !important; }
+}
+
+@each $state, $color in $palettes {
+    .text-#{$state} {
+        color: $color;
+    }
+    .btn-#{$state} {
+        background-color: $color;
+
+        &:hover {
+            background-color: lighten($color, 10%);
+        }
+
+    }
 }

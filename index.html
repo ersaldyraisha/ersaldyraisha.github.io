@@ -1,140 +1,74 @@
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <meta name="description" content="Ersaldy Raisha | A Web Portfolio">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="Baze is a front-end starter template">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
 
-  <meta property="og:url" content="ersaldyraisha.me">
-  <meta property="og:title" content="Ersaldy Raisha">
-  <meta property="og:site_name" content="Ersaldy Raisha">
-  <meta property="og:description" content="A Web Portfolio">
-  <meta property="og:image" content="assets/img/apple-icon.png">
-  <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website">
+    <meta property="fb:app_id" content="">
 
-  <meta name="twitter:card" content="">
-  <meta name="twitter:site" content="">
-  <meta name="twitter:description" content="">
-  <meta name="twitter:title" content="">
-  <meta name="twitter:image" content="">
+    <meta name="twitter:card" content="">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:image" content="">
 
-  <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
 
-  <title>Ersaldy Raisha | A Web Portfolio</title>
+    <title>Ersaldy Raisha - Modest Portfolio</title>
 
-  <link rel="stylesheet" href="assets/css/main.css">
-  <script src="assets/js/vendor/modernizr.min.js"></script>
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
-<body>
-  <!--[if lt IE 9]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+<body ng-app="portfolio-app" ng-controller="mainCtrl">
+    <!--[if lte IE 9]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
 
-  <header>
-    <nav class="sitenav hidden-mobile"> 
-      <ul class="sitenav-list">
-        <li class="sitenav-item">
-          <a href="#!" class="sitenav-anchor sitenav-anchor--about">about</a>
-        </li>
-        <li class="sitenav-item">
-          <a href="#!" class="sitenav-anchor sitenav-anchor--projects">projects</a>
-        </li>
-        <li class="sitenav-item">
-          <a href="#!" class="sitenav-anchor sitenav-anchor--contact">contact</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+    <!-- <div class="sticky-footer-container">
+        <div class="sticky-footer-container-item">Header</div>
+        <div class="sticky-footer-container-item --pushed">Content</div>
+        <div class="sticky-footer-container-item">Footer</div>
+    </div> -->
 
-  <main>
+    <main class="section-parent">
+        <section class="section section-main">
+            <img class="mb-1" src="assets/img/ganteng-bw.png" width="150px">
+            <h1 class="text-normal text-black mb-0">Hi, I'm Raisha</h1>
+            <h2 class="text-normal text-grey">the CSS guy.</h2>
+            <p class="text-grey mb-3"><em>and UI designer too sometimes.</em></p>
+        </section>
+        
+        <section class="section section-works" ng-class="{'is-active': isListActive}" ng-controller="listCtrl">
+            <button class="btn btn-red btn-dark btn-rounded btn-check" ng-click="showList()">
+                <span ng-if="!isListActive">Checkout my works</span>
+                <span ng-if="isListActive">&#10006</span>
+            </button>
+            <div class="container">
+                <h2 class="text-normal">so, here are some of my works</h2>
+                <button class="btn btn-red btn-dark btn-rounded">Hire Me?</button>
+            </div>
+        </section>
+    </main>
 
-    <section class="main-section flexbox full-screen v-center is-active">
-      <div class="container">
-        <h1 class="text-jumbo no-margin">ersaldy raisha</h1>
-        <h3>designer + developer</h3>
-        <div class="main-section-scroller-container">
-          <i class="fa fa-angle-down main-section-arrow"></i>
-          <strong>scroll down</strong>
-        </div>
-      </div>
-      <img class="main-section-img" src="assets/img/main-bg.jpg" alt="main-bg">
-    </section>
-    
-    <section class="second-section flexbox full-screen v-center">
-      <div class="container">
-        <div class="block-twice"></div>
-        <h1 class="section-title">about</h1>
-        <p>part-time designer / part-time developer / full-time learner.</p> 
-        <p class="no-margin">specialized as a front-end developer, but also familiar with UI/UX design, software design pattern, project management, and video editing. started as a designer, but later pursued software engineering major at Institut Teknologi Sepuluh Nopember Surabaya.</p>
-      </div>
-      <img class="second-section-img" src="assets/img/section-bg.jpg" alt="section-bg">
-    </section>
-    
-    <section class="flexbox full-screen v-center">
-      <div class="container">
-        <h1 class="section-title">projects</h1>
-        <ul class="project-slider list-nostyle">
-          <li class="project-slider-item">
-            <a class="project-slider-anchor" href="#!">
-              <img class="slider-img block-half" src="http://via.placeholder.com/400x250" alt="">
-              <div class="slider-caption">
-                <h3 class="no-margin">Nama Project</h3>
-                <p>Application</p>
-              </div>
-            </a>
-          </li>
-          <li class="project-slider-item">
-            <a class="project-slider-anchor" href="#!">
-              <img class="slider-img block-half" src="http://via.placeholder.com/400x250" alt="">
-              <div class="slider-caption">
-                <h3 class="no-margin">Nama Project</h3>
-                <p>Application</p>
-              </div>
-            </a>
-          </li>
-          <li class="project-slider-item">
-            <a class="project-slider-anchor" href="#!">
-              <img class="slider-img block-half" src="http://via.placeholder.com/400x250" alt="">
-              <div class="slider-caption">
-                <h3 class="no-margin">Nama Project</h3>
-                <p>Application</p>
-              </div>
-            </a>
-          </li>
-          <li class="project-slider-item">
-            <a class="project-slider-anchor" href="#!">
-              <img class="slider-img block-half" src="http://via.placeholder.com/400x250" alt="">
-              <div class="slider-caption">
-                <h3 class="no-margin">Nama Project</h3>
-                <p>Application</p>
-              </div>
-            </a>
-          </li>
-          <li class="project-slider-item">
-            <a class="project-slider-anchor" href="#!">
-              <img class="slider-img block-half" src="http://via.placeholder.com/400x250" alt="">
-              <div class="slider-caption">
-                <h3 class="no-margin">Nama Project</h3>
-                <p>Application</p>
-              </div>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,promise,fetch" defer></script>
+    <script src="assets/js/vendor/angular.min.js" defer></script>
+    <script src="assets/js/vendor/modernizr.min.js" defer></script>
+    <script src="assets/js/vendor/jquery.min.js" defer></script>
+    <script src="assets/js/vendor/object-fit-images.min.js" defer></script>
+    <script src="assets/js/vendor/slick.min.js" defer></script>
+    <script src="assets/js/vendor/sprintf.min.js" defer></script>
+    <script src="assets/js/vendor/baze.validate.min.js" defer></script>
 
-  </main>
-
-    
-    
-  <script>window.myPrefix = '';</script>
-  <script src="assets/js/vendor/jquery.min.js"></script>
-  <script src="assets/js/vendor/slick.min.js"></script>
-  <script src="https://cdn.polyfill.io/v2/polyfill.js?features=default,promise,fetch"></script>
-  <script src="assets/js/main.min.js"></script>
+    <script src="assets/js/main.min.js" defer></script>
 </body>
 </html>

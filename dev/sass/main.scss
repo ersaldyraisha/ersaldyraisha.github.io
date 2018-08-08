@@ -30,6 +30,7 @@ html {
 }
 
 body {
+    text-decoration-skip: ink;
     color: $black90;
 }
 
@@ -43,8 +44,20 @@ a {
     }
 }
 
+button {
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+    }
+}
+
 .block {
     margin-bottom: $space;
+}
+
+.block-half {
+    margin-bottom: ($space / 2);
 }
 
 .container {

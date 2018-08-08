@@ -7,102 +7,39 @@ const gulp        = require('gulp')
 const del         = require('del')
 const prefixer    = require('autoprefixer')
 const beep        = require('beepbeep')
+const rollupBabel = require('rollup-plugin-babel')
+const rUglify     = require('rollup-plugin-uglify')
 const plugins     = require('gulp-load-plugins')()
+const rollup      = require('rollup-stream')
+const source      = require('vinyl-source-stream')
 
 const paths = {
     dev     : 'dev/',
     build   : 'assets/'
 }
 
-const autoprefixOpts = {
-    browsers: ['> 1%', 'last 10 versions', 'Firefox ESR', 'Opera 12.1']
-}
-
-const renameOpts = {
-    suffix: '.min'
-}
-
-
-
-/* Task: Watch HTML
---------------------------------------------------------------------------------- */
-
-gulp.task('watch:html', () => {
-    let srcToWatch = ['**/*.html', '**/*.php']
-
-    return gulp
-        .src(srcToWatch)
-        .pipe(plugins.watch(srcToWatch))
-        .pipe(plugins.livereload())
-})
-
-
-
-/* Task: Watch CSS
---------------------------------------------------------------------------------- */
-
-gulp.task('watch:stylesheet', () => {
-    let srcToWatch = `${paths.build}css/*.css`
-
-    return gulp
-        .src(srcToWatch)
-        .pipe(plugins.watch(srcToWatch))
-        .pipe(plugins.livereload())
-})
-
-
-
-/* Task: Watch JS
---------------------------------------------------------------------------------- */
-
-gulp.task('watch:js', () => {
-    let srcToWatch = `${paths.build}js/*.js`
-
-    return gulp
-        .src(srcToWatch)
-        .pipe(plugins.watch(srcToWatch))
-        .pipe(plugins.livereload())
-})
-
-
-
 /* Task: Compile SASS
 --------------------------------------------------------------------------------- */
 
-gulp.task('stylesheet:compile', () => {
-    let options = {
-        outputStyle: 'expanded'
+const sassTask = (isMinified = false) => () => {
+    const outputStyle = isMinified ? 'compressed' : 'expanded'
+    const options = { outputStyle }
+    const autoprefixOpts = {
+        browsers: ['last 2 versions']
     }
 
-    return gulp
-        .src(`${paths.dev}sass/main.scss`)
+    return gulp.src(`${paths.dev}sass/main.scss`)
         .pipe(plugins.sass(options).on('error', plugins.sass.logError))
         .pipe(plugins.postcss([
             prefixer(autoprefixOpts),
             require('postcss-object-fit-images')
         ]))
         .pipe(gulp.dest(`${paths.build}css`))
-})
+        .pipe(plugins.livereload())
+}
 
-
-
-/* Task: Style
---------------------------------------------------------------------------------- */
-
-gulp.task('stylesheet:compile_and_minify', () => {
-    let options = {
-        outputStyle: 'compressed'
-    }
-
-    return gulp
-        .src(`${paths.dev}sass/main.scss`)
-        .pipe(plugins.sass(options))
-        .pipe(plugins.postcss([
-            prefixer(autoprefixOpts),
-            require('postcss-object-fit-images')
-        ]))
-        .pipe(gulp.dest(`${paths.build}css`))
-})
+gulp.task('stylesheet:compile', sassTask())
+gulp.task('stylesheet:compile_and_minify', sassTask(true))
 
 
 
@@ -113,8 +50,9 @@ gulp.task('stylesheet:compile_and_minify', () => {
 gulp.task('stylesheet:copy_vendor_css', () => {
     return gulp
         .src(`${paths.dev}css/*.css`)
-        .pipe(plugins.cleanCss())
+        .pipe(plugins.cleanCss({ compatibility: 'ie9' }))
         .pipe(gulp.dest(`${paths.build}css/`))
+        .pipe(plugins.livereload())
 })
 
 
@@ -123,36 +61,40 @@ gulp.task('stylesheet:copy_vendor_css', () => {
 /* Task: Ecmascript next
 --------------------------------------------------------------------------------- */
 
-gulp.task('javascript:compile', () => {
-    return gulp
-        .src(`${paths.dev}js/*.js`)
-        .pipe(plugins.babel({
-            presets: ['es2015', 'react']
-        }))
-        .on('error', function (err) {
-            console.log('>>> Error', err)
-            beep(2)
-            this.emit('end')
+const jsTask = (isMinified = false) => () => {
+    const rollupPlugins = [
+        rollupBabel({
+            exclude: 'node_modules/**',
+            presets: [
+                ['env', { modules: false }]
+            ],
+            plugins: [
+                'transform-object-rest-spread'
+            ]
         })
-        .pipe(plugins.rename(renameOpts))
-        .pipe(gulp.dest(`${paths.build}js`))
-})
+    ]
 
-gulp.task('javascript:compile_and_minify', () => {
-    return gulp
-        .src(`${paths.dev}js/*.js`)
-        .pipe(plugins.babel({
-            presets: ['es2015']
-        }))
-        .on('error', function (err) {
-            console.log('>>> Error', err)
-            beep(2)
-            this.emit('end')
-        })
-        .pipe(plugins.uglify())
-        .pipe(plugins.rename(renameOpts))
-        .pipe(gulp.dest(`${paths.build}js`))
-})
+    if ( isMinified ) {
+        rollupPlugins.push(rUglify())
+    }
+
+    return rollup({
+        input: './dev/js/main.js',
+        format: 'iife',
+        name: 'Site',
+        plugins: rollupPlugins
+    })
+    .on('error', function (e) {
+        console.log(e)
+        this.emit('end')
+    })
+    .pipe(source('main.min.js'))
+    .pipe(gulp.dest('./assets/js'))
+    .pipe(plugins.livereload())
+}
+
+gulp.task('javascript:compile', jsTask())
+gulp.task('javascript:compile_and_minify', jsTask(true))
 
 
 
@@ -160,26 +102,25 @@ gulp.task('javascript:compile_and_minify', () => {
 /* Task: Copy JS
 --------------------------------------------------------------------------------- */
 
+const renameOpts = {
+    suffix: '.min'
+}
+
 gulp.task('javascript:copy_vendor_js', () => {
     return gulp
         .src(`${paths.dev}js/vendor/*.js`)
         .pipe(plugins.rename(renameOpts))
         .pipe(gulp.dest(`${paths.build}js/vendor/`))
+        .pipe(plugins.livereload())
 })
-
-
-
-
-/* Task: Minify JS
---------------------------------------------------------------------------------- */
 
 gulp.task('javascript:minify_vendor_js', () => {
     return gulp
         .src(`${paths.dev}js/vendor/*.js`)
-        .pipe(plugins.changed(`${paths.build}js`))
         .pipe(plugins.uglify())
         .pipe(plugins.rename(renameOpts))
         .pipe(gulp.dest(`${paths.build}js/vendor/`))
+        .pipe(plugins.livereload())
 })
 
 
@@ -206,29 +147,7 @@ gulp.task('image:compress', () => {
             plugins.imagemin.svgo()
         ]))
         .pipe(gulp.dest(`${paths.build}img`))
-})
-
-
-
-
-/* Task: Convert image to WebP
---------------------------------------------------------------------------------- */
-
-gulp.task('image:convert_to_webp', () => {
-    let imageFormats = [
-        `${paths.dev}img/webp/*.png`,
-        `${paths.dev}img/webp/*.jpg`
-    ]
-
-    let options = {
-        quality: 80
-    }
-
-    return gulp
-        .src(imageFormats)
-        .pipe(plugins.changed(`${paths.build}img/webp/`))
-        .pipe(plugins.webp(options))
-        .pipe(gulp.dest(`${paths.build}img/webp/`))
+        .pipe(plugins.livereload())
 })
 
 
@@ -242,6 +161,19 @@ gulp.task('fonts', () => {
         .src(`${paths.dev}fonts/*`)
         .pipe(plugins.changed(`${paths.build}fonts`))
         .pipe(gulp.dest(`${paths.build}fonts`))
+        .pipe(plugins.livereload())
+})
+
+
+
+
+/* Task: Watch HTLM and PHP files
+--------------------------------------------------------------------------------- */
+
+gulp.task('watch:htmlPHP', () => {
+    return gulp
+        .src(['*.html', '*.php', '**/*.php'])
+        .pipe(plugins.livereload())
 })
 
 
@@ -269,8 +201,8 @@ gulp.task('default', [
     'javascript:compile',
     'javascript:copy_vendor_js',
     'image:compress',
-    'image:convert_to_webp',
-    'fonts'
+    'fonts',
+    'watch:htmlPHP'
 ])
 
 
@@ -280,6 +212,7 @@ gulp.task('default', [
 --------------------------------------------------------------------------------- */
 
 gulp.task('watch', ['default'], () => {
+    plugins.livereload.listen()
     // SASS
     gulp.watch(`${paths.dev}sass/**/*.scss`, ['stylesheet:compile'])
 
@@ -292,24 +225,13 @@ gulp.task('watch', ['default'], () => {
     // Imagemin
     gulp.watch(`${paths.dev}img/*`, ['image:compress'])
 
-    // WebP
-    gulp.watch(`${paths.dev}img/webp/*`, ['image:convert_to_webp'])
-
     // Fonts
     gulp.watch(`${paths.dev}fonts/*`, ['fonts'])
 
     // Copy CSS
     gulp.watch(`${paths.dev}css/*`, ['stylesheet:copy_vendor_css'])
-})
 
-
-
-
-/* Task: Livereload
---------------------------------------------------------------------------------- */
-
-gulp.task('livereload', () => {
-    gulp.start('watch:html', 'watch:stylesheet', 'watch:js')
+    gulp.watch(['*.html', '*.php', '**/*.php'], ['watch:htmlPHP'])
 })
 
 
@@ -324,7 +246,6 @@ gulp.task('production', [
     'javascript:compile_and_minify',
     'javascript:minify_vendor_js',
     'image:compress',
-    'image:convert_to_webp',
     'fonts'
 ])
 
