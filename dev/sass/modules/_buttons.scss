@@ -55,6 +55,22 @@
     width: 100%;
 }
 
+.btn-round {
+    width: $space * 2.5;
+    height: $space * 2.5;
+    padding: 11px 12px;
+    border-radius: 100px;
+
+    &:hover {
+        transform: rotate(360deg);
+        color: #fff;
+    }
+    
+    &:focus {
+        color: #fff;
+    }
+}
+
 .btn-dark {
     color: #fff;
 }

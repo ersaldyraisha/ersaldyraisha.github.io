@@ -3,6 +3,7 @@ import activeStateMobile from './activeStateMobile'
 import WPViewportFix from './windowsPhoneViewportFix'
 import objectFitPolyfill from './objectFitPolyfill'
 import formValidation from './formValidation'
+import projectList from './list'
 
 const App = {
     activeStateMobile,
@@ -11,13 +12,36 @@ const App = {
     formValidation,
     
     angular() {
-        angular.module('portfolio-app', [])
+        angular.module('portfolio-app', ['slick'])
 
         .controller('mainCtrl', ['$http', '$scope', ($http, $scope) => {
             $scope.isListActive = false
+            $scope.projectList = projectList
+            $scope.head = 'head1'
+            
+            $scope.headEnter = () => {
+                $scope.head = 'head2'
+            }
+            
+            $scope.headLeave = () => {
+                $scope.head = 'head1'
+            }
+
             $scope.showList = () => {
                 $scope.isListActive = !$scope.isListActive
             }
+
+            $scope.showDetail = (id) => {
+                $scope.activeProject = $scope.projectList
+                    .filter(curr => {
+                        if ( curr.id === id )
+                            return curr
+                    })
+                    .reduce(curr => curr)
+                console.log($scope.activeProject)
+            }
+            
+
         }])
 
         .controller('listCtrl', ['$http', '$scope', ($http, $scope) => {

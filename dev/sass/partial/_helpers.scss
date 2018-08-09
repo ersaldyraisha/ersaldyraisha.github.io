@@ -88,6 +88,18 @@
     width: 100%;
 }
 
+.flex-box {
+    display: flex;
+}
+
+.flex-start {
+    align-self: flex-start;
+}
+
+.flex-end {
+    align-self: flex-end;
+}
+
 $gaps: 0, 1, 2, 3, 4, 8, 12, 16, 20, 24;
 
 @each $gap in $gaps {

@@ -15,7 +15,11 @@ $space              : $base_line_height;
 $palettes: (
     black: #212121,
     grey: #808080,
-    red: #DB4646
+    red: #DB4646,
+    fb: #3B5998,
+    mail: #CA3F32,
+    github: #24292E,
+    linkedin: #0077B5
 );
 
 @function palette($color) {
