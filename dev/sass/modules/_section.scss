@@ -4,7 +4,11 @@ body {
 }
 
 .head {
-  height: 200px;
+  height: 150px;
+
+  @media #{$medium} {
+    height: 200px;
+  }
 }
 
 .section {

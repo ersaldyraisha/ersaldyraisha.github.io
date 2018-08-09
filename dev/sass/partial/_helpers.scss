@@ -120,3 +120,19 @@ $gaps: 0, 1, 2, 3, 4, 8, 12, 16, 20, 24;
 
     }
 }
+
+.show-desktop {
+    display: none;
+
+    @media #{$medium} {
+        display: initial;
+    }
+}
+
+.show-mobile {
+    display: initial;
+    
+    @media #{$medium} {
+        display: none;
+    }
+}
