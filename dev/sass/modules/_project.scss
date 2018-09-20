@@ -1,0 +1,34 @@
+.project-container {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+.project-img {
+  height: 100%;
+  width: 30%;
+  object-fit: cover;
+}
+
+.project-desc-container {
+  position: relative;
+  width: 70%;
+  padding: ($space * 1.3) ($space * 5);
+  overflow-y: auto;
+}
+
+.project-desc {
+  text-align: left;
+}
+
+.project-snapshot {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.project-snapshot-item {
+  height: 250px;
+  margin-right: $space;
+  margin-bottom: $space;
+}

@@ -17,7 +17,7 @@
     display: inline-block;
     padding: 8px 24px;
     border: 0;
-    font-family: sans-serif;
+    //font-family: sans-serif;
     line-height: $base_line_height;
     text-align: center;
     white-space: nowrap;
@@ -62,7 +62,7 @@
     border-radius: 100px;
 
     &:hover {
-        transform: rotate(360deg);
+        transform: translateY(-3px);
         color: #fff;
     }
     
@@ -90,6 +90,19 @@
 
 .btn-check {
     position: absolute;
-    top: 0;
-    transform: translateY(-50%)
+    bottom: 0;
+    transform: translateY(50%);
+    z-index: 5;
+}
+
+.btn-close {
+    position: absolute;
+    top: $space * 2;
+    left: $space * 2;
+}
+
+.btn-up {
+    position: absolute;
+    bottom: $space * 2;
+    right: $space * 2;
 }

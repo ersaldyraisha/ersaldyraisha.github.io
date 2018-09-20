@@ -4,40 +4,40 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <meta name="description" content="Ersaldy Raisha | Developer/Designer Portolio">
+    <meta name="description" content="Ersaldy Raisha | Modest Portolio">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
 
     <meta property="og:url" content="ersaldyraisha.me">
-    <meta property="og:title" content="Ersaldy Raisha | Developer/Designer Portolio">
-    <meta property="og:site_name" content="Ersaldy Raisha | Developer/Designer Portolio">
-    <meta property="og:description" content="A Developer/Designer Portolio of Ersaldy Raisha">
-    <meta property="og:image" content="assets/img/head1.jpg">
+    <meta property="og:title" content="Ersaldy Raisha | Modest Portolio">
+    <meta property="og:site_name" content="Ersaldy Raisha | Modest Portolio">
+    <meta property="og:description" content="A Modest Portolio of Ersaldy Raisha">
+    <meta property="og:image" content="">
     <meta property="og:type" content="website">
 
-    <meta name="twitter:card" content="Ersaldy Raisha | Developer/Designer Portolio">
+    <meta name="twitter:card" content="Ersaldy Raisha | Modest Portolio">
     <meta name="twitter:site" content="ersaldyraisha.me">
-    <meta name="twitter:description" content="A Developer/Designer Portolio of Ersaldy Raisha">
-    <meta name="twitter:title" content="Ersaldy Raisha | Developer/Designer Portolio">
-    <meta name="twitter:image" content="assets/img/head1.jpg">
+    <meta name="twitter:description" content="A Modest Portolio of Ersaldy Raisha">
+    <meta name="twitter:title" content="Ersaldy Raisha | Modest Portolio">
+    <meta name="twitter:image" content="">
 
     <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
 
-    <title>Ersaldy Raisha - Developer/Designer Portfolio</title>
+    <title>Ersaldy Raisha - Modest Portfolio</title>
 
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
-<body ng-app="portfolio-app" ng-controller="mainCtrl" ng-class="{'is-active' : isDetailActive}">
+<body ng-app="portfolio-app" ng-controller="mainCtrl">
 
     <main>
         <section class="section section-main">
             <div class="head-container">
                 <div class="show-desktop">
-                    <a href="https://www.facebook.com/ersaldyraisha" class="btn btn-round btn-fb btn-dark" target="_blank" data-tooltip="Poke me on Facebook">
+                    <a href="https://www.facebook.com/ersaldyraisha" class="btn btn-round btn-fb btn-dark" target="_blank">
                         <i class="fab fa-facebook-f fa-2x"></i>
                     </a>
-                    <a href="mailto:andi.ersaldy@gmail.com?subject=Yo, I'll give you a job" class="btn btn-round btn-mail btn-dark" target="_blank" data-tooltip="Hire me (please?)">
+                    <a href="mailto:andi.ersaldy@gmail.com?subject=Yo, I'll give you a job" class="btn btn-round btn-mail btn-dark" target="_blank">
                         <i class="far fa-envelope fa-2x"></i>
                     </a>
                 </div>
@@ -46,10 +46,10 @@
                     <img class="head" ng-src="assets/img/head1.jpg" ng-mouseover="headTrigger()" ng-mouseleave="headTrigger()" ng-class="{'is-not-active': isPhotoVisible}">
                 </div>
                 <div class="show-desktop">
-                    <a href="https://github.com/ersaldyraisha" class="btn btn-round btn-github btn-dark" target="_blank" data-tooltip="See my projects">
+                    <a href="https://github.com/ersaldyraisha" class="btn btn-round btn-github btn-dark" target="_blank">
                         <i class="fab fa-github fa-2x"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/ersaldyraisha" class="btn btn-round btn-linkedin btn-dark" target="_blank" data-tooltip="Hit me on Linkedin">
+                    <a href="https://www.linkedin.com/in/ersaldyraisha" class="btn btn-round btn-linkedin btn-dark" target="_blank">
                         <i class="fab fa-linkedin-in fa-2x"></i>
                     </a>
                 </div>
@@ -70,31 +70,38 @@
             </div>
             <h1 class="text-normal text-black mb-0">Hi, I'm Raisha</h1>
             <h2 class="text-normal text-grey">the CSS guy.</h2>
-            <p class="text-grey">
+            <p class="text-grey mb-3">
                 <em>and UI designer too sometimes.</em>
             </p>
-            <button class="btn btn-red btn-dark btn-rounded btn-check" ng-click="scrollDown()">
-                <i class="fa fa-angle-down"></i> My works
-            </button>
         </section>
         
-        <section class="section section-works">
+        <section class="section section-works" ng-class="{'is-active': isListActive}">
+            <button class="btn btn-red btn-dark btn-rounded btn-check" ng-click="showList()">
+                <span ng-if="!isListActive">
+                    <i class="fa fa-angle-up"></i>
+                    My works
+                </span>
+                <span ng-if="isListActive">
+                    <i class="fa fa-angle-down"></i>
+                </span>
+            </button>
             <div class="container">
+            
                 <div class="slider-container">
-                    <div class="slider-background"></div>
                     <slick class="slider mb-1" infinite="true" slides-to-show="3" slides-to-scroll="1" center-mode="true" prev-arrow=".slider-prev"
-                        next-arrow=".slider-next">
+                        next-arrow=".slider-next" ng-class="{'is-active': isListActive}">
                         <div class="slider-item" ng-repeat="item in projectList">
                             <img class="slider-img mb-1" ng-src="{{item.img[0]}}">
                             <div class="slider-detail">
                                 <h3 class="text-normal mb-0" ng-bind="item.name"></h3>
-                                <p class="mb-1">
+                                <p class="mb-0">
                                     <small ng-bind="item.type"></small>
                                 </p>
                                 <button class="btn btn-rounded mb-1" ng-click="detailTrigger(item.id)">See Detail</button>
                             </div>
                         </div>
                     </slick>
+                    <div class="slider-background" ng-class="{'is-active': isListActive}"></div>
                     <div class="slider-background-container">
                         <button class="btn slider-btn slider-prev">
                             <i class="fa fa-angle-left"></i>
@@ -104,9 +111,7 @@
                         </button>
                     </div>
                 </div>
-                <button class="btn btn-round btn-dark btn-red btn-up" ng-click="scrollUp()">
-                    <i class="fa fa-arrow-up"></i>
-                </button>
+        
             </div>
 
         </section>
@@ -120,12 +125,11 @@
                             <i class="fa fa-arrow-left"></i>
                         </button>
                         <div class="project-desc">
-                            <h1 class="text-normal mb-0" ng-bind="activeProject.name"></h1>
+                            <h1 class="mb-0" ng-bind="activeProject.name"></h1>
                             <p><small ng-bind="activeProject.type"></small></p>
                             <div class="divider"></div>
                             
                             <p ng-bind="activeProject.desc"></p>
-                            <p> <small>Role:</small> <small ng-bind="activeProject.role"></small></p>
                             <div class="project-snapshot">
                                 <img class="project-snapshot-item" ng-repeat="img in activeProject.img" ng-src="{{img}}" ng-alt="{{activeProject.name}}" ng-if="$index > 0">
                             </div>

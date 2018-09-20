@@ -12,42 +12,48 @@ const App = {
     formValidation,
     
     angular() {
-        angular.module('portfolio-app', ['slick'])
+        angular.module('portfolio-app', ['slick', 'ngRoute'])
 
-        .controller('mainCtrl', ['$http', '$scope', ($http, $scope) => {
-            $scope.isListActive = false
+        .controller('mainCtrl', ['$scope', ($scope) => {
+            $scope.name = 'main'
+            $scope.isDetailActive = false
             $scope.isPhotoVisible = false
             $scope.projectList = projectList
-            $scope.head = 'head1'
-            
+            $scope.activeProject = null
+
             $scope.headTrigger = () => {
                 $scope.isPhotoVisible = !$scope.isPhotoVisible
             }
 
-            $scope.showList = () => {
-                $scope.isListActive = !$scope.isListActive
+            $scope.scrollDown = () => {
+                window.scrollTo({
+                    top: 1000,
+                    behavior: 'smooth',
+                })
             }
 
-            $scope.showDetail = (id) => {
-                $scope.activeProject = $scope.projectList
-                    .filter(curr => {
-                        if ( curr.id === id )
-                            return curr
-                    })
-                    .reduce(curr => curr)
-                console.log($scope.activeProject)
+            $scope.scrollUp = () => {
+                window.scrollTo({
+                    top: -1000,
+                    behavior: 'smooth',
+                });
             }
-            
 
+            $scope.detailTrigger = (id) => {
+                if ($scope.isDetailActive === false) {
+                    $scope.activeProject = $scope.projectList
+                        .filter(curr => {
+                            if (curr.id === id)
+                                return curr
+                        })
+                        .reduce(curr => curr)
+                    $scope.isDetailActive = !$scope.isDetailActive
+                } else {
+                    $scope.isDetailActive = !$scope.isDetailActive
+                }
+            }
         }])
 
-        .controller('listCtrl', ['$http', '$scope', ($http, $scope) => {
-            $scope.name = 'list'
-        }])
-
-        .controller('detailCtrl', ['$http', '$scope', ($http, $scope) => {
-            $scope.name = 'detail'
-        }])
     }
 }
 
