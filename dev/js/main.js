@@ -16,15 +16,12 @@ const App = {
 
         .controller('mainCtrl', ['$http', '$scope', ($http, $scope) => {
             $scope.isListActive = false
+            $scope.isPhotoVisible = false
             $scope.projectList = projectList
             $scope.head = 'head1'
             
-            $scope.headEnter = () => {
-                $scope.head = 'head2'
-            }
-            
-            $scope.headLeave = () => {
-                $scope.head = 'head1'
+            $scope.headTrigger = () => {
+                $scope.isPhotoVisible = !$scope.isPhotoVisible
             }
 
             $scope.showList = () => {
