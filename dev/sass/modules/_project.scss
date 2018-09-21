@@ -44,8 +44,9 @@
 
 .project-snapshot {
   width: 100%;
-  overflow-x: auto;
+  overflow-x: scroll;
   white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
 }
 
 .project-snapshot-item {
