@@ -32,7 +32,12 @@ let projectList = [
     type: 'Website / 2016',
     role: 'UI Design + Front-end Development',
     desc: 'Every big event needs a good website. Schematics is one of the biggest annual event in Surabaya held by Himpunan Mahasiswa Teknik Computer Informatika  ITS Surabaya, consisting a national programming contest (NPC), a national logic competition (NLC), a national seminaar of technology (NST), and a concert with various art expo (REEVA). The website features not only for promotion purpose but also ticketing and registration purpose.',
-    img: ['https://i2.wp.com/fariswooden.com/wp-content/uploads/2018/05/TOKOPEDIA-LOGO.png?ssl=1', 'https://cdn6.aptoide.com/imgs/5/9/d/59dc487eae29b1d8c929c057677a0765_screen.png?h=464', 'https://is5-ssl.mzstatic.com/image/thumb/Purple118/v4/59/25/3a/59253a9e-b196-e2cc-ca6b-fc2fc581c764/mzl.mcglrwxm.png/750x750bb.jpeg']
+    img: [
+      'assets/img/projects/schematics.jpg',
+      'assets/img/projects/schematics1.jpg',
+      'assets/img/projects/schematics2.jpg',
+      'assets/img/projects/schematics3.jpg'
+      ]
   },
   {
     id: 'amann',
@@ -48,7 +53,12 @@ let projectList = [
     type: 'Website  / 2015',
     role: 'Front-end Development',
     desc: 'Programming Laboratory II (LP2) is one of the service laboratory in Informatics Department ITS that can be reserved for any classes or events. With the increasing usage of the reservation, a platform is built to simplify the reservation process with minimum of fuss.',
-    img: ['assets/img/projects/lp2.jpg', 'https://cdn6.aptoide.com/imgs/5/9/d/59dc487eae29b1d8c929c057677a0765_screen.png?h=464', 'https://is5-ssl.mzstatic.com/image/thumb/Purple118/v4/59/25/3a/59253a9e-b196-e2cc-ca6b-fc2fc581c764/mzl.mcglrwxm.png/750x750bb.jpeg']
+    img: [
+      'assets/img/projects/lp2.jpg',
+      'assets/img/projects/masakapaya1.jpg',
+      'assets/img/projects/masakapaya2.jpg',
+      'assets/img/projects/masakapaya3.jpg'
+      ]
   }
 ]
 
