@@ -2,19 +2,40 @@
   display: flex;
   height: 100%;
   overflow: hidden;
+  flex-direction: column;
+  
+  @media #{$medium} {
+    flex-direction: row;
+  }
+}
+
+.project-img-container {
+  position: relative;
+  height: 200px;
+  width: 100%;
+  
+  @media #{$medium} {
+    height: 100%;
+    width: 30%;
+  }
 }
 
 .project-img {
   height: 100%;
-  width: 30%;
+  width: 100%;
   object-fit: cover;
 }
 
 .project-desc-container {
   position: relative;
-  width: 70%;
-  padding: ($space * 1.3) ($space * 5);
+  width: 100%;
+  padding: ($space * 1.5) $space;
   overflow-y: auto;
+  
+  @media #{$medium}{
+    width: 70%;
+    padding: ($space * 1.3) ($space * 5);
+  }
 }
 
 .project-desc {

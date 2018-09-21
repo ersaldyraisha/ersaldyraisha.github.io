@@ -34,10 +34,10 @@
         <section class="section section-main">
             <div class="head-container">
                 <div class="show-desktop">
-                    <a href="https://www.facebook.com/ersaldyraisha" class="btn btn-round btn-fb btn-dark" target="_blank" data-tooltip="Poke me on Facebook">
+                    <a href="https://www.facebook.com/ersaldyraisha" class="btn btn-round btn-contact btn-fb btn-dark" target="_blank" data-tooltip="Poke me on Facebook">
                         <i class="fab fa-facebook-f fa-2x"></i>
                     </a>
-                    <a href="mailto:andi.ersaldy@gmail.com?subject=Yo, I'll give you a job" class="btn btn-round btn-mail btn-dark" target="_blank" data-tooltip="Hire me (please?)">
+                    <a href="mailto:andi.ersaldy@gmail.com?subject=Yo, I'll give you a job" class="btn btn-round btn-contact btn-mail btn-dark" target="_blank" data-tooltip="Hire me (please?)">
                         <i class="far fa-envelope fa-2x"></i>
                     </a>
                 </div>
@@ -46,25 +46,25 @@
                     <img class="head" ng-src="assets/img/head1.jpg" ng-mouseover="headTrigger()" ng-mouseleave="headTrigger()" ng-class="{'is-not-active': isPhotoVisible}">
                 </div>
                 <div class="show-desktop">
-                    <a href="https://github.com/ersaldyraisha" class="btn btn-round btn-github btn-dark" target="_blank" data-tooltip="See my projects">
+                    <a href="https://github.com/ersaldyraisha" class="btn btn-round btn-contact btn-github btn-dark" target="_blank" data-tooltip="See my projects">
                         <i class="fab fa-github fa-2x"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/ersaldyraisha" class="btn btn-round btn-linkedin btn-dark" target="_blank" data-tooltip="Hit me on Linkedin">
+                    <a href="https://www.linkedin.com/in/ersaldyraisha" class="btn btn-round btn-contact btn-linkedin btn-dark" target="_blank" data-tooltip="Hit me on Linkedin">
                         <i class="fab fa-linkedin-in fa-2x"></i>
                     </a>
                 </div>
             </div>
             <div class="text-center show-mobile mb-1">
-                <a href="https://www.facebook.com/ersaldyraisha" class="btn btn-round btn-fb btn-dark" target="_blank">
+                <a href="https://www.facebook.com/ersaldyraisha" class="btn btn-round btn-contact btn-fb btn-dark" target="_blank">
                     <i class="fab fa-facebook-f fa-2x"></i>
                 </a>
-                <a href="mailto:andi.ersaldy@gmail.com?subject=Yo, I'll give you a job" class="btn btn-round btn-mail btn-dark" target="_blank">
+                <a href="mailto:andi.ersaldy@gmail.com?subject=Yo, I'll give you a job" class="btn btn-round btn-contact btn-mail btn-dark" target="_blank">
                     <i class="far fa-envelope fa-2x"></i>
                 </a>
-                <a href="https://github.com/ersaldyraisha" class="btn btn-round btn-github btn-dark" target="_blank">
+                <a href="https://github.com/ersaldyraisha" class="btn btn-round btn-contact btn-github btn-dark" target="_blank">
                     <i class="fab fa-github fa-2x"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/ersaldyraisha" class="btn btn-round btn-linkedin btn-dark" target="_blank">
+                <a href="https://www.linkedin.com/in/ersaldyraisha" class="btn btn-round btn-contact btn-linkedin btn-dark" target="_blank">
                     <i class="fab fa-linkedin-in fa-2x"></i>
                 </a>
             </div>
@@ -82,8 +82,23 @@
             <div class="container">
                 <div class="slider-container">
                     <div class="slider-background"></div>
-                    <slick class="slider mb-1" infinite="true" slides-to-show="3" slides-to-scroll="1" center-mode="true" prev-arrow=".slider-prev"
-                        next-arrow=".slider-next">
+                    <slick 
+                        class="slider mb-1"
+                        infinite="true"
+                        slides-to-show= "3"
+                        slides-to-scroll="1"
+                        center-mode="true"
+                        prev-arrow=".slider-prev"
+                        next-arrow=".slider-next"
+                        responsive="[
+                            {
+                                breakpoint: 480,
+                                settings: {
+                                    slidesToShow: 1
+                                }
+                            }    
+                        ]"
+                    >
                         <div class="slider-item" ng-repeat="item in projectList">
                             <img class="slider-img mb-1" ng-src="{{item.img[0]}}">
                             <div class="slider-detail">
@@ -113,12 +128,14 @@
 
         <section class="section section-detail" ng-class="{'is-active': isDetailActive}">
             <div class="project-container">
-                <img class="project-img" ng-src="{{activeProject.img[0]}}" alt="">
+                <div class="project-img-container">
+                    <button class="btn btn-round btn-red btn-dark btn-close" ng-click="detailTrigger()">
+                        <i class="fa fa-arrow-left"></i>
+                    </button>
+                    <img class="project-img" ng-src="{{activeProject.img[0]}}" alt="">
+                </div>
                 <div class="project-desc-container">
                     <div class="flexbox">
-                        <button class="btn btn-round btn-red btn-dark btn-close" ng-click="detailTrigger()">
-                            <i class="fa fa-arrow-left"></i>
-                        </button>
                         <div class="project-desc">
                             <h1 class="text-normal mb-0" ng-bind="activeProject.name"></h1>
                             <p><small ng-bind="activeProject.type"></small></p>
