@@ -47,6 +47,7 @@ body {
 }
 
 .section-main {
+   background: #fff;
 }
 
 .section-works {
@@ -67,8 +68,10 @@ body {
   background: #fff;
   transform: translateY(100%);
   transition: all .5s ease;
+  opacity: 0;
 
   &.is-active {
     transform: translateY(0);
+    opacity: 1;
   }
 }

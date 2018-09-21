@@ -30,7 +30,17 @@
 </head>
 <body ng-app="portfolio-app" ng-controller="mainCtrl" ng-class="{'is-active' : isDetailActive}">
 
-    <main>
+    <div class="cloak">
+        <h2>hold on...</h2>
+        <div class="load-bar">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </div>
+    
+
+    <main class="ng-cloak">
         <section class="section section-main">
             <div class="head-container">
                 <div class="show-desktop">
