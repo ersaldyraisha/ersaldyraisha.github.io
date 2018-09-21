@@ -13,7 +13,12 @@ let projectList = [
     type: 'Website / 2017',
     role: 'Front-end Development',
     desc: 'Indofood Masakapaya.com help moms to quickly find interesting personalized recipes. Bringing awesome features that help users to search for recipes and decrease their cognitive load. Masakapaya.com is one of the project I`ve done under the internship period at Suitmedia Software Agency as a front-end developer.',
-    img: ['http://www.bukalapak.com/images/logo-google-graph.png', 'https://cdn6.aptoide.com/imgs/5/9/d/59dc487eae29b1d8c929c057677a0765_screen.png?h=464', 'https://is5-ssl.mzstatic.com/image/thumb/Purple118/v4/59/25/3a/59253a9e-b196-e2cc-ca6b-fc2fc581c764/mzl.mcglrwxm.png/750x750bb.jpeg']
+    img : [
+      'assets/img/projects/masakapaya.jpg',
+      'assets/img/projects/masakapaya1.jpg',
+      'assets/img/projects/masakapaya2.jpg',
+      'assets/img/projects/masakapaya3.jpg'
+      ]
   },
   {
     id: 'schematics',

@@ -143,7 +143,7 @@
                             
                             <p ng-bind="activeProject.desc"></p>
                             <p> <small>Role:</small> <small ng-bind="activeProject.role"></small></p>
-                            <div class="project-snapshot">
+                            <div class="project-snapshot scrollbar">
                                 <img class="project-snapshot-item" ng-repeat="img in activeProject.img" ng-src="{{img}}" ng-alt="{{activeProject.name}}" ng-if="$index > 0">
                             </div>
                         </div>
