@@ -58,20 +58,21 @@ body {
 }
 
 .section-detail {
-  position: fixed;
+  background: #fff;
+  /* position: fixed;
+  background: #fff;
   top: 0;
   left: 0;
   z-index: 20;
   display: block;
   width: 100%;
   height: 100%;
-  background: #fff;
-  transform: translateY(100%);
   transition: all .5s ease;
+  transform: translateY(100%);
   opacity: 0;
 
   &.is-active {
     transform: translateY(0);
     opacity: 1;
-  }
+  } */
 }

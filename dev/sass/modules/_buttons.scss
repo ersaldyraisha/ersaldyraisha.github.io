@@ -17,7 +17,6 @@
     display: inline-block;
     padding: 8px 24px;
     border: 0;
-    //font-family: sans-serif;
     line-height: $base_line_height;
     text-align: center;
     white-space: nowrap;
@@ -52,6 +51,15 @@
 
 .btn--block {
     width: 100%;
+}
+
+.btn-grey {
+    background: #DDDDDD;
+    
+    &:hover{
+        background: #9a9a9a;
+        color: #fff;
+    }
 }
 
 .btn-round {

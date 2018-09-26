@@ -41,139 +41,19 @@
         </div>
     </div>
     
-    <main class="ng-cloak">
-        <section class="section section-main">
-            <div class="head-container">
-                <div class="show-desktop">
-                    <a href="https://www.facebook.com/ersaldyraisha" class="btn btn-round btn-contact btn-fb btn-dark" target="_blank" data-tooltip="Poke me on Facebook">
-                        <i class="fab fa-facebook-f fa-2x"></i>
-                    </a>
-                    <a href="mailto:andi.ersaldy@gmail.com?subject=Yo, I'll give you a job" class="btn btn-round btn-contact btn-mail btn-dark" target="_blank" data-tooltip="Hire me (please?)">
-                        <i class="far fa-envelope fa-2x"></i>
-                    </a>
-                </div>
-                <div class="head-photo-container mb-1">
-                    <img class="head" ng-src="assets/img/head2.jpg">
-                    <img class="head" ng-src="assets/img/head1.jpg" ng-mouseover="headTrigger()" ng-mouseleave="headTrigger()" ng-class="{'is-not-active': isPhotoVisible}">
-                </div>
-                <div class="show-desktop">
-                    <a href="https://github.com/ersaldyraisha" class="btn btn-round btn-contact btn-github btn-dark" target="_blank" data-tooltip="See my projects">
-                        <i class="fab fa-github fa-2x"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/ersaldyraisha" class="btn btn-round btn-contact btn-linkedin btn-dark" target="_blank" data-tooltip="Hit me on Linkedin">
-                        <i class="fab fa-linkedin-in fa-2x"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="text-center show-mobile mb-1">
-                <a href="https://www.facebook.com/ersaldyraisha" class="btn btn-round btn-contact btn-fb btn-dark" target="_blank">
-                    <i class="fab fa-facebook-f fa-2x"></i>
-                </a>
-                <a href="mailto:andi.ersaldy@gmail.com?subject=Yo, I'll give you a job" class="btn btn-round btn-contact btn-mail btn-dark" target="_blank">
-                    <i class="far fa-envelope fa-2x"></i>
-                </a>
-                <a href="https://github.com/ersaldyraisha" class="btn btn-round btn-contact btn-github btn-dark" target="_blank">
-                    <i class="fab fa-github fa-2x"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/ersaldyraisha" class="btn btn-round btn-contact btn-linkedin btn-dark" target="_blank">
-                    <i class="fab fa-linkedin-in fa-2x"></i>
-                </a>
-            </div>
-            <h1 class="text-normal text-black mb-0">Hi, I'm Raisha</h1>
-            <h2 class="text-normal text-grey">the CSS guy.</h2>
-            <p class="text-grey">
-                <em>and UI designer too sometimes.</em>
-            </p>
-            <button class="btn btn-red btn-dark btn-rounded btn-check" ng-click="scrollDown()">
-                <i class="fa fa-angle-down"></i> My works
-            </button>
-        </section>
-        
-        <section class="section section-works">
-            <div class="container">
-                <div class="slider-container">
-                    <div class="slider-background"></div>
-                    <slick 
-                        class="slider mb-1"
-                        infinite="true"
-                        slides-to-show= "3"
-                        slides-to-scroll="1"
-                        center-mode="true"
-                        prev-arrow=".slider-prev"
-                        next-arrow=".slider-next"
-                        responsive="[
-                            {
-                                breakpoint: 480,
-                                settings: {
-                                    slidesToShow: 1
-                                }
-                            }    
-                        ]"
-                    >
-                        <div class="slider-item" ng-repeat="item in projectList">
-                            <img class="slider-img mb-1" ng-src="{{item.img[0]}}">
-                            <div class="slider-detail">
-                                <h3 class="text-normal mb-0" ng-bind="item.name"></h3>
-                                <p class="mb-1">
-                                    <small ng-bind="item.type"></small>
-                                </p>
-                                <button class="btn btn-rounded mb-1" ng-click="detailTrigger(item.id)">See Detail</button>
-                            </div>
-                        </div>
-                    </slick>
-                    <div class="slider-background-container">
-                        <button class="btn slider-btn slider-prev">
-                            <i class="fa fa-angle-left"></i>
-                        </button>
-                        <button class="btn slider-btn slider-next">
-                            <i class="fa fa-angle-right"></i>
-                        </button>
-                    </div>
-                </div>
-                <button class="btn btn-round btn-dark btn-red btn-up" ng-click="scrollUp()">
-                    <i class="fa fa-arrow-up"></i>
-                </button>
-            </div>
-
-        </section>
-
-        <section class="section section-detail" ng-class="{'is-active': isDetailActive}">
-            <div class="project-container">
-                <div class="project-img-container">
-                    <button class="btn btn-round btn-red btn-dark btn-close" ng-click="detailTrigger()">
-                        <i class="fa fa-arrow-left"></i>
-                    </button>
-                    <img class="project-img" ng-src="{{activeProject.img[0]}}" alt="">
-                </div>
-                <div class="project-desc-container">
-                    <div class="flexbox">
-                        <div class="project-desc">
-                            <h1 class="text-normal mb-0" ng-bind="activeProject.name"></h1>
-                            <p><small ng-bind="activeProject.type"></small></p>
-                            <div class="divider"></div>
-                            
-                            <p ng-bind="activeProject.desc"></p>
-                            <p> <small>Role:</small> <small ng-bind="activeProject.role"></small></p>
-                            <div class="project-snapshot scrollbar">
-                                <img class="project-snapshot-item" ng-repeat="img in activeProject.img" ng-src="{{img}}" ng-alt="{{activeProject.name}}" ng-if="$index > 0">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+    <main class="ng-cloak ng-anim" ng-view></main>
 
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,promise,fetch"></script>
     <script src="assets/js/vendor/modernizr.min.js"></script>
     <script src="assets/js/vendor/jquery.min.js"></script>
     <script src="assets/js/vendor/angular.min.js"></script>
     <script src="assets/js/vendor/angular-route.min.js"></script>
+    <script src="assets/js/vendor/angular-slick.min.js"></script>
+    <script src="assets/js/vendor/angular-animate.min.js"></script>
     <script src="assets/js/vendor/object-fit-images.min.js"></script>
     <script src="assets/js/vendor/slick.min.js"></script>
     <script src="assets/js/vendor/sprintf.min.js"></script>
     <script src="assets/js/vendor/baze.validate.min.js"></script>
-    <script src="assets/js/vendor/angular-slick.min.js"></script>
     
     <script src="assets/js/main.min.js"></script>
 </body>

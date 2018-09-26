@@ -1,0 +1,25 @@
+<section class="section section-detail">
+    <div class="project-container">
+        <div class="project-img-container">
+            <button class="btn btn-round btn-red btn-dark btn-close" ng-click="back()">
+                <i class="fa fa-arrow-left"></i>
+            </button>
+            <img class="project-img" ng-src="{{projectContent.img[0]}}" alt="">
+        </div>
+        <div class="project-desc-container">
+            <div class="flexbox">
+                <div class="project-desc">
+                    <h1 class="text-normal mb-0" ng-bind="projectContent.name"></h1>
+                    <p><small ng-bind="projectContent.type"></small></p>
+                    <div class="divider"></div>
+                    
+                    <p ng-bind="projectContent.desc"></p>
+                    <p> <small>Role:</small> <small ng-bind="projectContent.role"></small></p>
+                    <div class="project-snapshot scrollbar">
+                        <img class="project-snapshot-item" ng-repeat="img in projectContent.img" ng-src="{{img}}" ng-alt="{{projectContent.name}}" ng-if="$index > 0">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

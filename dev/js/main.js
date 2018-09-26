@@ -12,7 +12,7 @@ const App = {
     formValidation,
     
     angular() {
-        angular.module('portfolio-app', ['slick', 'ngRoute'])
+        angular.module('portfolio-app', ['slick', 'ngRoute', 'ngAnimate'])
 
         .controller('mainCtrl', ['$scope', ($scope) => {
             $scope.name = 'main'
@@ -39,7 +39,7 @@ const App = {
                 });
             }
 
-            $scope.detailTrigger = (id) => {
+            /* $scope.detailTrigger = (id) => {
                 if ($scope.isDetailActive === false) {
                     $scope.activeProject = $scope.projectList
                         .filter(curr => {
@@ -51,8 +51,39 @@ const App = {
                 } else {
                     $scope.isDetailActive = !$scope.isDetailActive
                 }
+            } */
+        }])
+
+        .controller('projectCtrl', ['$scope','$routeParams', ($scope, $routeParams) => {
+            $scope.projectId = $routeParams.projectId
+            $scope.projectContent = projectList
+                .filter(curr => {
+                    if (curr.id === $scope.projectId)
+                        return curr
+                })
+                .reduce(curr => curr)
+            $scope.back = () => {
+                history.back()
+                return false
             }
         }])
+
+        .config(['$routeProvider', '$locationProvider', ($routeProvider, $locationProvider) => {
+            $routeProvider
+                .when('/', {
+                    templateUrl: 'home.html',
+                    controller: 'mainCtrl'
+                })
+                .when('/project/:projectId', {
+                    templateUrl: 'project.html',
+                    controller: 'projectCtrl'
+                })
+                .otherwise({
+                    redirectTo: '/'
+                })
+        }])
+
+        
 
     }
 }

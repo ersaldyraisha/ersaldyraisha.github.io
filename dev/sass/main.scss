@@ -32,6 +32,7 @@ html {
 body {
     text-decoration-skip: ink;
     color: $black90;
+    overflow-x: hidden;
 }
 
 a {
@@ -83,6 +84,21 @@ button {
 .ng-cloak {
     display: none !important;
 }
+
+.ng-anim{
+    
+    &.ng-enter {
+        transition: 0.7s ease all;
+        //transform: translateX(100%);
+        opacity: 0;
+        
+        &.ng-enter-active {
+            //transform: translateX(0);
+            opacity: 1;
+        }
+    }
+}
+
 
 
 
