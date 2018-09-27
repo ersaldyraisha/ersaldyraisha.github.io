@@ -47,7 +47,7 @@ let projectList = [
     desc: 'Amman is a crowdsourced personal security application prototype based on Android platform that ensure your safety anywhere you go. Amman will notify you as you go somewhere with a high number of crime activities and will let you get emergency service if the unwanted thing happen. This project has won several awards such as a silver medal at Multimedia & Game Event ITS 2016 and finalist at Go-Jek GO-HACKATHON.',
     img: ['assets/img/projects/amann.jpg', 'assets/img/projects/amann1.jpg', 'assets/img/projects/amann2.jpg', 'assets/img/projects/amann3.jpg']
   },
-  {
+  /* {
     id: 'lp2',
     name: 'LP2 Reservation System',
     type: 'Website  / 2015',
@@ -59,7 +59,7 @@ let projectList = [
       'assets/img/projects/masakapaya2.jpg',
       'assets/img/projects/masakapaya3.jpg'
       ]
-  }
+  } */
 ]
 
 export default projectList
