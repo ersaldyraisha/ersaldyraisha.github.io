@@ -56,6 +56,8 @@ const App = {
 
         .controller('projectCtrl', ['$scope','$routeParams', ($scope, $routeParams) => {
             $scope.projectId = $routeParams.projectId
+            $scope.activeImage = null
+            $scope.isImageActive = false
             $scope.projectContent = projectList
                 .filter(curr => {
                     if (curr.id === $scope.projectId)
@@ -65,6 +67,11 @@ const App = {
             $scope.back = () => {
                 history.back()
                 return false
+            }
+            $scope.showImage = (src) => {
+                $scope.activeImage = src
+                $scope.isImageActive = !$scope.isImageActive
+                //console.log(index)
             }
         }])
 

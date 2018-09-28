@@ -16,10 +16,16 @@
                     <p ng-bind="projectContent.desc"></p>
                     <p> <small>Role:</small> <small ng-bind="projectContent.role"></small></p>
                     <div class="project-snapshot scrollbar">
-                        <img class="project-snapshot-item" ng-repeat="img in projectContent.img" ng-src="{{img}}" ng-alt="{{projectContent.name}}" ng-if="$index > 0">
+                        <img class="project-snapshot-item" ng-repeat="img in projectContent.img" ng-src="{{img}}" ng-alt="{{projectContent.name}}" ng-if="$index > 0" ng-click="showImage(img)">
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="project-modal" ng-class="{'is-active': isImageActive}">
+        <img class="project-modal-img" ng-src="{{activeImage}}" alt="project-img">
+        <button class="project-modal-close btn btn-round btn-red btn-dark" ng-click="showImage()">
+            <i class="fa fa-times"></i>
+        </button>
     </div>
 </section>
