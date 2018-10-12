@@ -15,9 +15,13 @@
                     
                     <p ng-bind="projectContent.desc"></p>
                     <p> <small>Role:</small> <small ng-bind="projectContent.role"></small></p>
-                    <div class="project-snapshot scrollbar">
-                        <img class="project-snapshot-item" ng-repeat="img in projectContent.img" ng-src="{{img}}" ng-alt="{{projectContent.name}}" ng-if="$index > 0" ng-click="showImage(img)">
-                    </div>
+                    
+                    <ul class="project-snapshot scrollbar list-nostyle list-inline">
+                        <li ng-repeat="img in projectContent.img">
+                            <img class="project-snapshot-item" ng-src="{{img}}" ng-alt="{{projectContent.name}}" ng-if="$index > 0" ng-click="showImage(img)">
+                        </li>
+                    </ul>
+                
                 </div>
             </div>
         </div>
