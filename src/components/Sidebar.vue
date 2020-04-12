@@ -33,11 +33,11 @@ export default {
     height: 100vh;
     background: $color-base-dark-4;
     color: $color-light;
-    width: 200px;
+    width: 230px;
 
     &__logo {
       background: $color-base-dark-5;
-      padding: 24px;
+      padding: 32px;
     }
 
     &__head {
@@ -51,7 +51,7 @@ export default {
     &__links {
       display: flex;
       flex-direction: column;
-      padding: 24px;
+      padding: 32px;
     }
   }
 
@@ -63,7 +63,7 @@ export default {
     }
 
     &__anchor{
-      font-size: var(--font-sm);
+      font-size: var(--font-md);
 
       &--active {
         color: $color-accent;

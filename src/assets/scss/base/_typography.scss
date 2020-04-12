@@ -36,19 +36,27 @@
 // TYPOGRAPHY HELPER
 .text {
   &--left {
-      text-align: left;
+    text-align: left;
   }
 
   &--center {
-      text-align: center;
+    text-align: center;
   }
 
   &--right {
-      text-align: right;
+    text-align: right;
   }
 
   &--bold {
-      font-weight: 700;
+    font-weight: 700;
+  }
+
+  &--accent {
+    color: $color-accent;
+
+    .nav__anchor:hover & {
+      color: darken($color-accent, 15);
+    }
   }
 }
   
