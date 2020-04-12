@@ -1,17 +1,6 @@
 <template>
   <div class="home">
     <section class="home__head head">
-      <div class="head__figure"
-        @mouseover="isImageOnHover = true"
-        @mouseleave="isImageOnHover = false"
-      >
-        <img
-          src="@/assets/img/raisha-the-css-guy.jpg"
-          alt="raisha-the-css-guy"
-          class="head__img"
-          :class="{'head__img--active': isImageOnHover}"
-        >
-      </div>
       <h2 class="head__title">Hi!</h2>
       <h3 class="head__subtitle">I'm <span class="text text--accent">Raisha.</span></h3>
       <h4 class="head__info">
@@ -22,9 +11,9 @@
     <section class="home__nav">
       <ul class="nav">
         <li class="nav__item">
-          <router-link :to="{ name: 'Projects' }" class="nav__anchor nav__anchor--dark">
+          <router-link :to="{ name: 'Works' }" class="nav__anchor nav__anchor--dark">
             <div class="nav__text">
-              Checkout my <br><span class="text text--accent">projects</span>
+              Checkout my <br><span class="text text--accent">Works</span>
             </div>
           </router-link>
         </li>
@@ -51,11 +40,6 @@
 
 export default {
   name: 'Home',
-  data() {
-    return {
-      isImageOnHover: false,
-    };
-  },
 };
 </script>
 
@@ -93,27 +77,6 @@ export default {
   &__info {
     font-size: 30px;
     margin-bottom: 75px;
-  }
-
-  &__figure {
-    position: absolute;
-    top: 50px;
-    right: 50px;
-    background: #E8EBE7;
-    height: 120px;
-    width: 120px;
-    border-radius: 100px;
-    overflow: hidden;
-  }
-
-  &__img {
-    width: 100%;
-    transform: translateY(45px);
-    transition: transform .5s ease;
-
-    &--active {
-      transform: translateY(0);
-    }
   }
 }
 
@@ -155,7 +118,7 @@ export default {
       background: $color-light;
       transform: translateX(-100%);
       opacity: 0;
-      transition: all .2s ease;
+      transition: all .3s cubic-bezier(0.55, 0, 0.1, 1);
     }
 
     &:after {
@@ -188,7 +151,7 @@ export default {
 
   &__text {
     position: relative;
-    z-index: 1;
+    z-index: z-index(main);
   }
 }
 </style>

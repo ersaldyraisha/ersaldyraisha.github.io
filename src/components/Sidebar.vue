@@ -8,7 +8,7 @@
         <router-link class="nav__anchor" :to="{ name: 'Home' }">/home</router-link>
       </li>
       <li class="nav__item">
-        <router-link class="nav__anchor" :to="{ name: 'Projects' }">/projects</router-link>
+        <router-link class="nav__anchor" :to="{ name: 'Works' }">/works</router-link>
       </li>
       <li class="nav__item">
         <router-link class="nav__anchor" :to="{ name: 'Blog' }">/blog</router-link>

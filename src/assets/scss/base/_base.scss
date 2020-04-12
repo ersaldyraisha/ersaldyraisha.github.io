@@ -26,6 +26,7 @@ body {
   font-size: var(--font-md);
   font-weight: 700;
   touch-action: manipulation;
+  overflow: hidden;
 }
 
 // shimmer / skeleton
@@ -169,6 +170,23 @@ div[lazy="loading"] {
   opacity: 0.5;
   transform: translateY(100%);
 }
+
+.page-slide-up-enter-active {
+  transition-duration: 0.4s;
+  transition-property: height, opacity, transform;
+  transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
+  overflow: hidden;
+}
+
+.page-slide-up-leave-active {
+  display: none;
+}
+
+.page-slide-up-enter,
+.page-slide-up-leave-active {
+  transform: translateY(100%);
+}
+
 
 .slide-down-enter-active,
 .slide-down-leave-active {

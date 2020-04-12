@@ -3,7 +3,7 @@ import VueRouter from 'vue-router';
 import Home from '@/pages/Home.vue';
 import Blog from '@/pages/Blog.vue';
 import Resume from '@/pages/Resume.vue';
-import Projects from '@/pages/Projects.vue';
+import Works from '@/pages/Works.vue';
 
 Vue.use(VueRouter);
 
@@ -14,9 +14,9 @@ const routes = [
     component: Home,
   },
   {
-    path: '/projects',
-    name: 'Projects',
-    component: Projects,
+    path: '/works',
+    name: 'Works',
+    component: Works,
   },
   {
     path: '/blog',

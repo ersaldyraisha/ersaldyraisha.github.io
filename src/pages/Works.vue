@@ -1,18 +1,18 @@
 <template>
-  <div class="project">
-    Projects
+  <div class="works">
+    Works
   </div>
 </template>
 
 <script>
 
 export default {
-  name: 'Project',
+  name: 'Works',
 };
 </script>
 
 <style lang="scss" scoped>
-.project {
+.works {
   background: $color-base;
   color: $color-light;
 }
