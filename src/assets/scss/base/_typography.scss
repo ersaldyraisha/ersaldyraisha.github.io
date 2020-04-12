@@ -1,0 +1,54 @@
+@font-face {
+  font-family: Lato;
+  font-display: swap;
+  font-weight: 400;
+  src: url('~@/assets/font/Lato-Regular.woff');
+}
+
+@font-face {
+  font-family: Lato;
+  font-display: swap;
+  font-weight: 700;
+  src: url('~@/assets/font/Lato-Bold.woff');
+}
+
+@font-face {
+  font-family: FiraCode;
+  font-display: swap;
+  font-weight: 200;
+  src: url('~@/assets/font/FiraCode-Light.woff');
+}
+
+@font-face {
+  font-family: FiraCode;
+  font-display: swap;
+  font-weight: 400;
+  src: url('~@/assets/font/FiraCode-Regular.woff');
+}
+
+@font-face {
+  font-family: FiraCode;
+  font-display: swap;
+  font-weight: 700;
+  src: url('~@/assets/font/FiraCode-Bold.woff');
+}
+
+// TYPOGRAPHY HELPER
+.text {
+  &--left {
+      text-align: left;
+  }
+
+  &--center {
+      text-align: center;
+  }
+
+  &--right {
+      text-align: right;
+  }
+
+  &--bold {
+      font-weight: 700;
+  }
+}
+  

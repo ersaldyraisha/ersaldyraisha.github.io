@@ -1,32 +1,33 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div id="app" class="app">
+    <ui-sidebar class="app__sidebar"></ui-sidebar>
+    <router-view class="app__content"/>
   </div>
 </template>
 
+<script>
+import UiSidebar from '@/components/Sidebar.vue';
+
+export default {
+  name: 'App',
+  components: {
+    UiSidebar,
+  },
+};
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  @import "~@/assets/scss/main";
 
-#nav {
-  padding: 30px;
+  .app {
+    display: flex;
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+    &__sidebar {
+      flex-shrink: 0;
+    }
 
-    &.router-link-exact-active {
-      color: #42b983;
+    &__content {
+      flex-grow: 1;
     }
   }
-}
 </style>

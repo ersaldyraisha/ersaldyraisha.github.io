@@ -1,0 +1,32 @@
+$z-indexes: (
+  main: (),
+  navbar: (),
+  modal-bg: (),
+  modal: (),
+  snackbar: (),
+);
+
+/*
+usage example on style
+.calendar {
+  z-index: z-index(navbar)
+}
+*/
+
+@function z-index($keys...) {
+  $map: $z-indexes;
+  $found-index: null;
+
+  @each $key in $keys {
+    @if (type-of($map) == 'map') {
+      $found-index: index(map-keys($map), $key);
+      $map: map-get($map, $key);
+    }
+
+    @else {
+      $found-index: index($map, $key);
+    }
+  }
+
+  @return $found-index;
+}

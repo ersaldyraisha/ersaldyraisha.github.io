@@ -1,0 +1,74 @@
+$spaces: auto;
+@for $i from 1 through 20 {
+  $spaces: append($spaces, $i)
+}
+
+@function getSpace($param) {
+  @if ($param == auto) { 
+    @return $param
+  }
+  $new-space: $spacer * $param;
+  @return $new-space;
+}
+
+@each $space in $spaces {
+  .m-#{$space} {
+    margin: getSpace($space);
+  }
+  
+  .mt-#{$space} {
+    margin-top: getSpace($space);
+  }
+
+  .mb-#{$space} {
+    margin-bottom: getSpace($space);
+  }
+
+  .mr-#{$space} {
+    margin-right: getSpace($space);
+  }
+
+  .ml-#{$space} {
+    margin-left: getSpace($space);
+  }
+
+  .mx-#{$space} {
+    margin-right: getSpace($space);
+    margin-left: getSpace($space);
+  }
+
+  .my-#{$space} {
+    margin-bottom: getSpace($space);
+    margin-top: getSpace($space);
+  }
+
+  .p-#{$space} {
+    padding: getSpace($space);
+  }
+  
+  .pt-#{$space} {
+    padding-top: getSpace($space);
+  }
+
+  .pb-#{$space} {
+    padding-bottom: getSpace($space);
+  }
+
+  .pr-#{$space} {
+    padding-right: getSpace($space);
+  }
+
+  .pl-#{$space} {
+    padding-left: getSpace($space);
+  }
+
+  .px-#{$space} {
+    padding-right: getSpace($space);
+    padding-left: getSpace($space);
+  }
+
+  .py-#{$space} {
+    padding-bottom: getSpace($space);
+    padding-top: getSpace($space);
+  }
+}

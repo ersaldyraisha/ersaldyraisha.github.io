@@ -1,0 +1,294 @@
+// Font size helper
+:root {
+  --font-xxs: 8px;
+  --font-xs: 10px;
+  --font-sm: 12px;
+  --font-md: 14px;
+  --font-lg: 16px;
+  --font-xl: 18px;
+  --font-xxl: 20px;
+}
+
+@media screen and (min-width: 360px) {
+  :root {
+    --font-xxs: 10px;
+    --font-xs: 12px;
+    --font-sm: 14px;
+    --font-md: 16px;
+    --font-lg: 18px;
+    --font-xl: 20px;
+    --font-xxl: 22px;
+  }
+}
+
+body {
+  font-family: $base-font-family;
+  font-size: var(--font-md);
+  font-weight: 700;
+  touch-action: manipulation;
+}
+
+// shimmer / skeleton
+.shimmer,
+img[lazy="loading"],
+div[lazy="loading"] {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderShimmer;
+  animation-timing-function: linear;
+  background: linear-gradient(to right, #eee 8%, #ddd 18%, #eee 33%);
+  background-size: 800px 104px;
+
+  &.shim-line {
+    height: 10px;
+    margin-bottom: 5px;
+
+    &--1 {
+      width: calc(1 / 12 * 100%);
+    }
+
+    &--2 {
+      width: calc(2 / 12 * 100%);
+    }
+
+    &--3 {
+      width: calc(3 / 12 * 100%);
+    }
+
+    &--4 {
+      width: calc(4 / 12 * 100%);
+    }
+
+    &--5 {
+      width: calc(5 / 12 * 100%);
+    }
+
+    &--6 {
+      width: calc(6 / 12 * 100%);
+    }
+
+    &--7 {
+      width: calc(7 / 12 * 100%);
+    }
+
+    &--8 {
+      width: calc(8 / 12 * 100%);
+    }
+
+    &--9 {
+      width: calc(9 / 12 * 100%);
+    }
+
+    &--10 {
+      width: calc(10 / 12 * 100%);
+    }
+
+    &--11 {
+      width: calc(11 / 12 * 100%);
+    }
+
+    &--12 {
+      width: 100%;
+    }
+  }
+}
+
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+
+  @-webkit-keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+// Horizontal line
+.hr {
+  border-top: 1px solid $color-base-dark-1;
+  margin: 7.5px 0;
+}
+
+// Alignment
+.align-middle {
+  vertical-align: middle !important;
+}
+
+// Animation
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition-duration: 0.3s;
+  transition-property: height, opacity, transform;
+  transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
+  overflow: hidden;
+}
+
+.slide-up-enter,
+.slide-up-leave-active {
+  opacity: 0.5;
+  transform: translateY(100%);
+}
+
+.slide-down-enter-active,
+.slide-down-leave-active {
+  transition-duration: 0.3s;
+  transition-property: height, opacity, transform;
+  transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
+  overflow: hidden;
+}
+
+.slide-down-enter,
+.slide-down-leave-active {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: 0.3s;
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
+  overflow: hidden;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}
+
+.slide-left-enter-active,
+.slide-left-leave-active,
+.slide-right-enter-active,
+.slide-right-leave-active {
+  will-change: transform, opacity;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  transition-duration: 0.3s;
+  transition-property: height, opacity, transform;
+  transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
+  overflow: hidden;
+}
+
+.slide-left-leave-active,
+.slide-left-enter {
+  opacity: 0.5;
+  transform: translateX(100%);
+}
+
+.slide-right-leave-active,
+.slide-right-enter {
+  opacity: 0.5;
+  transform: translate(-100%);
+}
+
+.smooth-enter-active,
+.smooth-leave-active {
+  transition: opacity 0.3s;
+}
+
+.smooth-enter,
+.smooth-leave-to {
+  opacity: 0;
+}
+
+// Remove highlight effect when tap on mobile
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.flex {
+  display: flex;
+
+  &--between {
+    justify-content: space-between;
+  }
+}
+
+// Input helper
+.no-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+  pointer-events: none; // Not focusable
+}
+
+// Remove vue datepicker style
+.vdp-datepicker {
+  input {
+    width: 100%;
+    border: 0; // to remove default border in input
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  ::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $color-accent;
+    opacity: 1; /* Firefox */
+  }
+
+  ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: $color-accent;
+  }
+
+  :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: $color-accent;
+  }
+}
+// Remove vue datepicker style
