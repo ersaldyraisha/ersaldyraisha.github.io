@@ -1,62 +1,27 @@
 @font-face {
-  font-family: Lato;
+  font-family: Sora;
+  font-display: swap;
+  font-weight: 300;
+  src: url('@/assets/fonts/sora-300.woff');
+}
+
+@font-face {
+  font-family: Sora;
   font-display: swap;
   font-weight: 400;
-  src: url('~@/assets/font/Lato-Regular.woff');
+  src: url('@/assets/fonts/sora-400.woff');
 }
 
 @font-face {
-  font-family: Lato;
+  font-family: Sora;
+  font-display: swap;
+  font-weight: 500;
+  src: url('@/assets/fonts/sora-500.woff');
+}
+
+@font-face {
+  font-family: Sora;
   font-display: swap;
   font-weight: 700;
-  src: url('~@/assets/font/Lato-Bold.woff');
+  src: url('@/assets/fonts/sora-700.woff');
 }
-
-@font-face {
-  font-family: FiraCode;
-  font-display: swap;
-  font-weight: 200;
-  src: url('~@/assets/font/FiraCode-Light.woff');
-}
-
-@font-face {
-  font-family: FiraCode;
-  font-display: swap;
-  font-weight: 400;
-  src: url('~@/assets/font/FiraCode-Regular.woff');
-}
-
-@font-face {
-  font-family: FiraCode;
-  font-display: swap;
-  font-weight: 700;
-  src: url('~@/assets/font/FiraCode-Bold.woff');
-}
-
-// TYPOGRAPHY HELPER
-.text {
-  &--left {
-    text-align: left;
-  }
-
-  &--center {
-    text-align: center;
-  }
-
-  &--right {
-    text-align: right;
-  }
-
-  &--bold {
-    font-weight: 700;
-  }
-
-  &--accent {
-    color: $color-accent;
-
-    .nav__anchor:hover & {
-      color: darken($color-accent, 15);
-    }
-  }
-}
-  

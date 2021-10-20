@@ -1,24 +1,6 @@
-$tablet_width: 768px;
-$mobile_width: 320px;
-$plus_width: 360px;
-
-@mixin media_mobile {
-  @media only screen
-    and (min-width: $mobile_width) {
-    @content;
-  }
-}
-
-@mixin media_plus {
-  @media only screen
-    and (min-width: $plus_width) {
-    @content;
-  }
-}
-
-@mixin media_tablet {
-  @media only screen
-    and (min-width: $tablet_width) {
-    @content;
-  }
+@mixin mask($maskUrl, $maskSize, $maskPosition) {
+  mask-size: $maskSize;
+  mask-position: $maskPosition;
+  mask-repeat: no-repeat;
+  mask-image: url('@/assets/' + $maskUrl);
 }

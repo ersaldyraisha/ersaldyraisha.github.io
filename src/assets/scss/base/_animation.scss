@@ -1,0 +1,17 @@
+// Animation
+
+.fade-enter-active {
+  transition: opacity 0.5s;
+}
+
+.fade-leave-active {
+  opacity: 1;
+}
+
+.fade-enter /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+.fade-leave-to {
+  opacity: 1;
+}
