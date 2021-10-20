@@ -16,8 +16,7 @@
             <h4 class="cards__title">{{ item.name }}</h4>
             <p class="cards__description">{{ item.type }}</p>
             <p class="cards__detail">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam,
-              impedit!
+              {{ item.desc }}
             </p>
           </div>
         </router-link>
