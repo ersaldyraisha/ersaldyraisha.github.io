@@ -52,7 +52,7 @@ export default {
         distance: '30px',
       });
       await ScrollReveal().reveal('.cards__item', {
-        delay: 300,
+        delay: 200,
         distance: '30px',
       });
     });

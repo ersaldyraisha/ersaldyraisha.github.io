@@ -2,14 +2,18 @@
   <div class="footer">
     <div class="container">
       <p class="footer__text">Let's work together</p>
-      <button class="footer__button">
-        <span> Write an email </span>
+      <a
+        target="_blank"
+        href="mailto:andi.ersaldy@gmail.com"
+        class="footer__button"
+      >
+        <span> Send an email </span>
         <img
           class="footer__image"
           src="@/assets/img/icons/arrow.png"
           alt="arrow"
         />
-      </button>
+      </a>
     </div>
   </div>
 </template>
@@ -18,13 +22,10 @@
 import ScrollReveal from 'scrollreveal';
 import { onMounted } from 'vue';
 
-const ScrollInstance = ScrollReveal();
-const scrollOptions = { distance: '30px' };
-
 onMounted(() => {
-  ScrollInstance.reveal('.footer');
-  ScrollInstance.reveal('.footer__text', { delay: 100, ...scrollOptions });
-  ScrollInstance.reveal('.footer__button', { delay: 300, ...scrollOptions });
+  const ScrollInstance = ScrollReveal();
+  ScrollInstance.reveal('.footer__text', { delay: 100, distance: '30px' });
+  ScrollInstance.reveal('.footer__button', { delay: 200, distance: '30px' });
 });
 </script>
 
@@ -49,14 +50,26 @@ onMounted(() => {
     vertical-align: middle;
     transform: rotate(90deg);
     margin-left: 10px;
+    transition: transform 0.2s ease;
   }
 
   &__button {
+    display: inline-block;
     background: $color-overlay;
     color: $color-base;
     padding: 15px 30px;
     border-radius: 100px;
     font-size: 20px;
+    outline: solid 0px #bbb;
+    transition: outline 0.2s ease;
+
+    &:hover {
+      outline: solid 10px #00000022;
+
+      .footer__image {
+        transform: translateX(10px) rotate(90deg);
+      }
+    }
   }
 }
 </style>
