@@ -30,68 +30,33 @@
 
 <script>
 import ScrollReveal from 'scrollreveal';
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, computed } from 'vue';
 import * as fireDB from 'firebase/database';
 
 export default {
   setup() {
-    const ScrollInstance = ScrollReveal();
-    const scrollOptions = { distance: '30px' };
     const works = ref([]);
 
     const fetchList = async () => {
-      const database = fireDB.getDatabase();
       const response = await fireDB.get(
-        fireDB.child(fireDB.ref(database), 'works')
+        fireDB.child(fireDB.ref(fireDB.getDatabase()), 'works')
       );
+
       works.value = response.val();
     };
 
     onMounted(async () => {
-      ScrollInstance.reveal('.works__title', { delay: 100, ...scrollOptions });
-      ScrollInstance.reveal('.cards__item', { delay: 300, ...scrollOptions });
-
       await fetchList();
-    });
 
-    // const works = [
-    //   {
-    //     image: 'https://picsum.photos/500/300',
-    //     name: 'Dapoer Bunpat',
-    //     type: 'Website',
-    //     backgroundColor: '#55C2C7',
-    //   },
-    //   {
-    //     image: 'https://picsum.photos/500/450',
-    //     name: 'Koncodapur',
-    //     type: 'Hybrid Application',
-    //     backgroundColor: '#3F3260',
-    //   },
-    //   {
-    //     image: 'https://picsum.photos/500/500',
-    //     name: 'Pegipegi',
-    //     type: 'Mobile Website',
-    //     backgroundColor: '#FA9949',
-    //   },
-    //   {
-    //     image: 'https://picsum.photos/500/400',
-    //     name: 'Schematics',
-    //     type: 'Website',
-    //     backgroundColor: '#324376',
-    //   },
-    //   {
-    //     image: 'https://picsum.photos/500/425',
-    //     name: 'myITS',
-    //     type: 'Mobile Application',
-    //     backgroundColor: '#3F3260',
-    //   },
-    //   {
-    //     image: 'https://picsum.photos/500/600',
-    //     name: 'Amann',
-    //     type: 'Mobile Application',
-    //     backgroundColor: '#55C2C7',
-    //   },
-    // ];
+      await ScrollReveal().reveal('.works__title', {
+        delay: 100,
+        distance: '30px',
+      });
+      await ScrollReveal().reveal('.cards__item', {
+        delay: 300,
+        distance: '30px',
+      });
+    });
 
     return { works };
   },
