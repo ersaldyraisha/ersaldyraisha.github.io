@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Home from './pages/Home.vue';
 import Project from './pages/Project.vue';
 
-const router = createRouter({
+export default createRouter({
   history: createWebHistory(),
   routes: [
     {
@@ -16,6 +16,7 @@ const router = createRouter({
       component: Project,
     },
   ],
+  scrollBehavior(to) {
+    if (to.name === 'project') return { top: 0 };
+  },
 });
-
-export default router;

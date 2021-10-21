@@ -1,10 +1,20 @@
 <template>
-  <router-view></router-view>
+  <router-view v-slot="{ Component }">
+    <transition :name="transitionName">
+      <component :is="Component" />
+    </transition>
+  </router-view>
 </template>
 
 <script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
+import { computed } from 'vue';
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
+const transitionName = computed(() => {
+  if (route.name === 'home') return 'unreveal';
+  return 'reveal';
+});
 </script>
 
 <style scoped></style>

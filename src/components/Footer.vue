@@ -19,13 +19,14 @@
 </template>
 
 <script setup>
-import ScrollReveal from 'scrollreveal';
+// import ScrollReveal from 'scrollreveal';
 import { onMounted } from 'vue';
 
 onMounted(() => {
-  const ScrollInstance = ScrollReveal();
-  ScrollInstance.reveal('.footer__text', { delay: 100, distance: '30px' });
-  ScrollInstance.reveal('.footer__button', { delay: 200, distance: '30px' });
+  // to-do: fix scrollReveal
+  // const ScrollInstance = ScrollReveal();
+  // ScrollInstance.reveal('.footer__text', { delay: 100, distance: '30px' });
+  // ScrollInstance.reveal('.footer__button', { delay: 200, distance: '30px' });
 });
 </script>
 
@@ -60,8 +61,8 @@ onMounted(() => {
     padding: 15px 30px;
     border-radius: 100px;
     font-size: 20px;
-    outline: solid 0px #bbb;
-    transition: outline 0.2s ease;
+    outline: solid 0px #00000022;
+    transition: all 0.2s ease;
 
     &:hover {
       outline: solid 10px #00000022;
