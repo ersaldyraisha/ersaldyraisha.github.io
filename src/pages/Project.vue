@@ -46,6 +46,7 @@
 </template>
 
 <script>
+import ScrollReveal from 'scrollreveal';
 import { computed, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { useStore } from 'vuex';
@@ -60,11 +61,26 @@ export default {
     const store = useStore();
     const projectDetail = computed(() => store.getters.selectedWork);
 
+    const initScrollReveal = async () => {
+      const getOption = (delay) => ({
+        delay,
+        distance: '30px',
+      });
+      const scrollInstance = ScrollReveal();
+      await scrollInstance.reveal('.footer__text', { ...getOption(100) });
+      await scrollInstance.reveal('.footer__button', { ...getOption(200) });
+    };
+
     onMounted(async () => {
       if (!store.getters.selectedWork) {
         store.commit('setSelectedWorkId', route.query.id);
         await store.dispatch('fetchWorks');
       }
+
+      // to-do: find better solution: wait router transition, then activate scrollReveal
+      setTimeout(() => {
+        initScrollReveal();
+      }, 500);
     });
 
     return { projectDetail };

@@ -18,18 +18,6 @@
   </div>
 </template>
 
-<script setup>
-// import ScrollReveal from 'scrollreveal';
-import { onMounted } from 'vue';
-
-onMounted(() => {
-  // to-do: fix scrollReveal
-  // const ScrollInstance = ScrollReveal();
-  // ScrollInstance.reveal('.footer__text', { delay: 100, distance: '30px' });
-  // ScrollInstance.reveal('.footer__button', { delay: 200, distance: '30px' });
-});
-</script>
-
 <style lang="scss" scoped>
 .footer {
   position: relative;

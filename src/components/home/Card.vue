@@ -57,6 +57,10 @@ $radius: 30px;
         opacity: 1;
       }
 
+      .card__image {
+        transform: translateY(-20px);
+      }
+
       .button {
         opacity: 1;
         transform: translateX(0);
@@ -70,6 +74,8 @@ $radius: 30px;
     border-radius: $radius;
     margin-bottom: 110px;
     object-fit: cover;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
   }
 
   &__text {

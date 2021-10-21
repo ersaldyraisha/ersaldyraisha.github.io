@@ -45,37 +45,24 @@
   </section>
 </template>
 
-<script setup>
-import ScrollReveal from 'scrollreveal';
-import { onMounted } from 'vue';
-
-onMounted(() => {
-  const ScrollInstance = ScrollReveal();
-  ScrollInstance.reveal('.headline', { duration: 1500 });
-  ScrollInstance.reveal('.headline__name', { delay: 100, distance: '30px' });
-  ScrollInstance.reveal('.headline__title', { delay: 300, distance: '30px' });
-  ScrollInstance.reveal('.social__button--gmail', {
-    delay: 400,
-    distance: '30px',
-  });
-  ScrollInstance.reveal('.social__button--linkedin', {
-    delay: 500,
-    distance: '30px',
-  });
-  ScrollInstance.reveal('.social__button--dribbble', {
-    delay: 600,
-    distance: '30px',
-  });
-});
-</script>
-
 <style lang="scss" scoped>
+@keyframes slide-left {
+  from {
+    background-position: right -200px bottom 50%;
+  }
+
+  to {
+    background-position: right 0px bottom 50%;
+  }
+}
+
 .headline {
   display: flex;
   justify-content: center;
   height: 1300px;
   background: url('@/assets/img/figures/contour.jpg') no-repeat right;
   background-size: cover;
+  animation: slide-left 2s;
 
   &__content {
     margin-top: calc(50vh - 180px);

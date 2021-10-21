@@ -16,8 +16,7 @@
 <script>
 import Card from './Card.vue';
 import { useStore } from 'vuex';
-import { onMounted, computed } from 'vue';
-// import ScrollReveal from 'scrollreveal';
+import { computed } from 'vue';
 
 export default {
   components: {
@@ -35,28 +34,22 @@ export default {
       );
     };
 
-    // const initScrollReveal = async () => {
-    //   await ScrollReveal().reveal('.works__title', {
-    //     delay: 100,
-    //     distance: '30px',
-    //   });
-    //   await ScrollReveal().reveal('.cards', {
-    //     delay: 200,
-    //     distance: '30px',
-    //   });
-    // };
-
-    onMounted(async () => {
-      // to-do: fix scrollReveal
-      // initScrollReveal();
-    });
-
     return { works, onCardClick };
   },
 };
 </script>
 
 <style lang="scss" scoped>
+@keyframes slide-up {
+  from {
+    bottom: calc(100% - 150px);
+  }
+
+  to {
+    bottom: 100%;
+  }
+}
+
 .works {
   position: relative;
   display: flex;
@@ -84,6 +77,7 @@ export default {
       background: url('@/assets/img/figures/wave-gradient-top.svg') no-repeat
         bottom;
       bottom: 100%;
+      animation: slide-up 2s;
     }
 
     &--bottom {
