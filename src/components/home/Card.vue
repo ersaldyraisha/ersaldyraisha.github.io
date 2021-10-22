@@ -41,6 +41,7 @@ $radius: 30px;
 .card {
   &__item {
     position: relative;
+    z-index: z-index(content);
     display: block;
     width: 100%;
     background: $color-overlay;

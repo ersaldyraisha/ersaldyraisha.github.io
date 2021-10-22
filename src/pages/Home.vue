@@ -31,10 +31,6 @@ export default {
         distance: '30px',
         container: document.querySelector('.homepage'),
       });
-      await scrollInstance.reveal('.works__title', { ...getOption(100) });
-      await scrollInstance.reveal('.cards', { ...getOption(200) });
-      await scrollInstance.reveal('.footer__text', { ...getOption(100) });
-      await scrollInstance.reveal('.footer__button', { ...getOption(200) });
       await scrollInstance.reveal('.headline__name', { ...getOption(200) });
       await scrollInstance.reveal('.headline__title', { ...getOption(400) });
       await scrollInstance.reveal('.social__button--gmail', {
@@ -46,6 +42,12 @@ export default {
       await scrollInstance.reveal('.social__button--dribbble', {
         ...getOption(700),
       });
+      await scrollInstance.reveal('.works__title', { ...getOption(100) });
+      await scrollInstance.reveal('.cards', { ...getOption(200) });
+
+      // to-do: fix outline animation not wisible with sr
+      await scrollInstance.reveal('.footer__text', { ...getOption(100) });
+      await scrollInstance.reveal('.footer__button', { ...getOption(200) });
     };
 
     onMounted(async () => {

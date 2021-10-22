@@ -60,6 +60,7 @@
   display: flex;
   justify-content: center;
   height: 1300px;
+  // to-do: add parallax to contour bg
   background: url('@/assets/img/figures/contour.jpg') no-repeat right;
   background-size: cover;
   animation: slide-left 2s;
@@ -128,7 +129,7 @@
   }
 
   &__icon {
-    z-index: z-index(main);
+    z-index: z-index(content);
     width: 50%;
   }
 }

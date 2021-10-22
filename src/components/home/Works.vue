@@ -58,6 +58,8 @@ export default {
   color: $color-base;
 
   &__title {
+    position: relative;
+    z-index: z-index(content);
     margin-bottom: 50px;
     padding-top: 20px;
     background: $color-overlay;
@@ -71,17 +73,17 @@ export default {
     height: 1000px;
     background-size: contain;
     pointer-events: none;
-    z-index: z-index(main);
+    z-index: z-index(ornament);
 
     &--top {
-      background: url('@/assets/img/figures/wave-gradient-top.svg') no-repeat
+      background: url('@/assets/img/figures/wave-top-gradient.svg') no-repeat
         bottom;
       bottom: 100%;
       animation: slide-up 2s;
     }
 
     &--bottom {
-      background: url('@/assets/img/figures/wave-gradient-bottom.svg') no-repeat
+      background: url('@/assets/img/figures/wave-bottom-gradient.svg') no-repeat
         top;
       top: 100%;
     }

@@ -20,20 +20,18 @@
   position: absolute;
   top: 0;
   width: 100%;
-  transition: all 0.5s ease;
+  transition: all 0.7s ease;
   z-index: z-index(main);
-  overflow: hidden !important;
 }
 
 .reveal-enter-from {
   position: absolute;
-  top: 100%;
-  overflow: hidden !important;
+  top: 200vh;
 }
 
 .reveal-leave-active {
   opacity: 0;
-  transition: all 0.5s ease;
+  transition: all 0.7s ease;
   overflow: hidden !important;
 }
 
@@ -44,7 +42,7 @@
 
 .unreveal-enter-active {
   opacity: 1;
-  transition: all 0.5s ease;
+  transition: all 0.7s ease;
   overflow: hidden !important;
 }
 
@@ -55,15 +53,13 @@
 
 .unreveal-leave-active {
   position: absolute;
-  top: 100%;
+  top: 200%;
   z-index: z-index(main);
   width: 100%;
-  transition: all 0.5s ease;
-  overflow: hidden !important;
+  transition: all 0.7s ease;
 }
 
 .unreveal-leave-from {
   position: absolute;
   top: 0;
-  overflow: hidden !important;
 }
