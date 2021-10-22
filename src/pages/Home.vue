@@ -32,12 +32,11 @@ export default {
         container: document.querySelector('.homepage'),
       });
       // to-do: fix sr not loaded after returning from project page
+      // to-do: fix outline animation not wisible with sr
       // await scrollInstance.reveal('.works__title', { ...getOption(100) });
       await scrollInstance.reveal('.cards', { ...getOption(200) });
-
-      // to-do: fix outline animation not wisible with sr
-      await scrollInstance.reveal('.footer__text', { ...getOption(100) });
-      await scrollInstance.reveal('.footer__button', { ...getOption(200) });
+      // await scrollInstance.reveal('.footer__text', { ...getOption(100) });
+      // await scrollInstance.reveal('.footer__button', { ...getOption(200) });
     };
 
     onMounted(async () => {
