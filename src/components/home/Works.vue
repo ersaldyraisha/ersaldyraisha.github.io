@@ -84,7 +84,7 @@ export default {
       background: url('@/assets/img/figures/wave-top-gradient.svg') no-repeat
         bottom;
       bottom: 100%;
-      animation: slide-up 2s;
+      animation: slide-up 2s both;
 
       @media screen and (max-width: 960px) {
         animation: none;

@@ -16,7 +16,7 @@ export default createRouter({
       component: Project,
     },
   ],
-  scrollBehavior(to) {
-    if (to.name === 'project') return { top: 0 };
+  scrollBehavior() {
+    return { top: 0 };
   },
 });

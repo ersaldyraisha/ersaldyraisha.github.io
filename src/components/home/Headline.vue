@@ -56,6 +56,18 @@
   }
 }
 
+@keyframes reveal {
+  from {
+    transform: translateY(30%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .headline {
   display: flex;
   justify-content: center;
@@ -63,7 +75,7 @@
   // to-do: add parallax to contour bg
   background: url('@/assets/img/figures/contour.jpg') no-repeat right;
   background-size: cover;
-  animation: slide-left 2s;
+  animation: slide-left 2s both;
 
   &__content {
     margin-top: calc(50vh - 180px);
@@ -76,6 +88,7 @@
   &__name {
     font-size: 32px;
     margin-bottom: 20px;
+    animation: reveal 0.5s ease 0.1s both;
 
     @media screen and (max-width: 960px) {
       font-size: 20px;
@@ -85,6 +98,7 @@
 
   &__title {
     font-size: 70px;
+    animation: reveal 0.8s ease 0.2s both;
 
     @media screen and (max-width: 960px) {
       font-size: 34px;
@@ -133,16 +147,28 @@
       }
     }
 
-    &--gmail:before {
-      background-color: #e138342a;
+    &--gmail {
+      animation: reveal 0.5s ease 0.4s both;
+
+      &:before {
+        background-color: #e138342a;
+      }
     }
 
-    &--linkedin:before {
-      background-color: #0287cf2a;
+    &--linkedin {
+      animation: reveal 0.5s ease 0.5s both;
+
+      &:before {
+        background-color: #0287cf2a;
+      }
     }
 
-    &--dribbble:before {
-      background-color: #ea35742a;
+    &--dribbble {
+      animation: reveal 0.5s ease 0.6s both;
+
+      &:before {
+        background-color: #ea35742a;
+      }
     }
 
     @media screen and (max-width: 960px) {
