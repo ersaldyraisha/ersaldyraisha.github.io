@@ -84,8 +84,9 @@ export default {
       const scrollInstance = ScrollReveal();
 
       // to-do: fix outline animation not wisible with sr
-      await scrollInstance.reveal('.footer__text', { ...getOption(100) });
-      await scrollInstance.reveal('.footer__button', { ...getOption(200) });
+      // to-do: fix sr not shown after navigating pages
+      // await scrollInstance.reveal('.footer__text', { ...getOption(100) });
+      // await scrollInstance.reveal('.footer__button', { ...getOption(200) });
     };
 
     onMounted(async () => {
