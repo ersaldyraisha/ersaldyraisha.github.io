@@ -31,7 +31,8 @@ export default {
         distance: '30px',
         container: document.querySelector('.homepage'),
       });
-      await scrollInstance.reveal('.works__title', { ...getOption(100) });
+      // to-do: fix sr not loaded after returning from project page
+      // await scrollInstance.reveal('.works__title', { ...getOption(100) });
       await scrollInstance.reveal('.cards', { ...getOption(200) });
 
       // to-do: fix outline animation not wisible with sr
