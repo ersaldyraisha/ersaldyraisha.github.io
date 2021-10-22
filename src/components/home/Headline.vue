@@ -67,15 +67,33 @@
 
   &__content {
     margin-top: calc(50vh - 180px);
+
+    @media screen and (max-width: 960px) {
+      margin-top: calc(50vh - 200px);
+    }
   }
 
   &__name {
     font-size: 32px;
     margin-bottom: 20px;
+
+    @media screen and (max-width: 960px) {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
   }
 
   &__title {
     font-size: 70px;
+
+    @media screen and (max-width: 960px) {
+      font-size: 34px;
+    }
+  }
+
+  @media screen and (max-width: 960px) {
+    height: 80vh;
+    animation: none;
   }
 }
 
@@ -126,11 +144,19 @@
     &--dribbble:before {
       background-color: #ea35742a;
     }
+
+    @media screen and (max-width: 960px) {
+      margin-right: 0;
+    }
   }
 
   &__icon {
     z-index: z-index(content);
     width: 50%;
+  }
+
+  @media screen and (max-width: 960px) {
+    margin-top: 10px;
   }
 }
 </style>

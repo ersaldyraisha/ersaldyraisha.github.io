@@ -38,6 +38,7 @@ export default {
 
 <style lang="scss" scoped>
 $radius: 30px;
+
 .card {
   &__item {
     position: relative;
@@ -49,23 +50,25 @@ $radius: 30px;
     cursor: pointer;
     overflow: hidden;
 
-    &:hover {
-      .card__text {
-        height: 250px;
-      }
+    @media screen and (min-width: 961px) {
+      &:hover {
+        .card__text {
+          height: 250px;
+        }
 
-      .card__detail {
-        opacity: 1;
-      }
+        .card__detail {
+          opacity: 1;
+        }
 
-      .card__image {
-        transform: translateY(-20px);
-      }
+        .card__image {
+          transform: translateY(-20px);
+        }
 
-      .button {
-        opacity: 1;
-        transform: translateX(0);
-        transition-delay: 0.2s;
+        .button {
+          opacity: 1;
+          transform: translateX(0);
+          transition-delay: 0.2s;
+        }
       }
     }
   }
@@ -77,6 +80,12 @@ $radius: 30px;
     object-fit: cover;
     transform: translateY(0);
     transition: transform 0.3s ease;
+    object-fit: cover;
+
+    @media screen and (max-width: 960px) {
+      margin-bottom: 80px;
+      height: 200px;
+    }
   }
 
   &__text {
@@ -90,21 +99,35 @@ $radius: 30px;
     border-radius: $radius;
     padding: 30px;
     transition: all 0.3s ease;
+
+    @media screen and (max-width: 960px) {
+      padding: 15px 20px;
+      height: 80px;
+    }
   }
 
   &__title {
     font-size: 30px;
+
+    @media screen and (max-width: 960px) {
+      font-size: 20px;
+    }
   }
 
   &__description {
     font-size: 18px;
     font-weight: 400;
+
+    @media screen and (max-width: 960px) {
+      font-size: 14px;
+    }
   }
 
   &__detail {
     opacity: 0;
     margin-top: 20px;
     font-weight: 400;
+    line-height: 1.5;
     font-size: 14px;
     transition: opacity 0.2s ease;
     display: -webkit-box;

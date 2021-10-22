@@ -64,6 +64,11 @@ export default {
     padding-top: 20px;
     background: $color-overlay;
     font-size: 60px;
+
+    @media screen and (max-width: 960px) {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
   }
 
   &__ornament {
@@ -80,12 +85,20 @@ export default {
         bottom;
       bottom: 100%;
       animation: slide-up 2s;
+
+      @media screen and (max-width: 960px) {
+        animation: none;
+      }
     }
 
     &--bottom {
       background: url('@/assets/img/figures/wave-bottom-gradient.svg') no-repeat
         top;
       top: 100%;
+    }
+
+    @media screen and (max-width: 960px) {
+      height: 500px;
     }
   }
 }

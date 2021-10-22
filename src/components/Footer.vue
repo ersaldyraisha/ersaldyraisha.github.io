@@ -29,9 +29,18 @@
   background: url('@/assets/img/figures/contour.jpg') no-repeat right;
   background-size: cover;
 
+  @media screen and (max-width: 960px) {
+    text-align: center;
+  }
+
   &__text {
     font-size: 35px;
     margin-bottom: 20px;
+
+    @media screen and (max-width: 960px) {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
   }
 
   &__image {
@@ -59,6 +68,16 @@
         transform: translateX(10px) rotate(90deg);
       }
     }
+
+    @media screen and (max-width: 960px) {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  }
+
+  @media screen and (max-width: 960px) {
+    height: 500px;
+    padding-top: 250px;
   }
 }
 </style>
