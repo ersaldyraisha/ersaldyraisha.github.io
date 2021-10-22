@@ -1,0 +1,6 @@
+@mixin mask($maskUrl, $maskSize, $maskPosition) {
+  mask-size: $maskSize;
+  mask-position: $maskPosition;
+  mask-repeat: no-repeat;
+  mask-image: url('@/assets/' + $maskUrl);
+}

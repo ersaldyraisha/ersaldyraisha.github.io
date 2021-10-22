@@ -1,0 +1,65 @@
+// Animation
+
+.fade-enter-active {
+  transition: opacity 0.5s;
+}
+
+.fade-leave-active {
+  opacity: 1;
+}
+
+.fade-enter /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+.fade-leave-to {
+  opacity: 1;
+}
+
+.reveal-enter-active {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  transition: all 0.7s ease;
+  z-index: z-index(main);
+}
+
+.reveal-enter-from {
+  position: absolute;
+  top: 200vh;
+}
+
+.reveal-leave-active {
+  opacity: 0;
+  transition: all 0.7s ease;
+  overflow: hidden !important;
+}
+
+.reveal-leave-from {
+  opacity: 1;
+  overflow: hidden !important;
+}
+
+.unreveal-enter-active {
+  opacity: 1;
+  transition: all 0.7s ease;
+  overflow: hidden !important;
+}
+
+.unreveal-enter-from {
+  opacity: 0;
+  overflow: hidden !important;
+}
+
+.unreveal-leave-active {
+  position: absolute;
+  top: 200%;
+  z-index: z-index(main);
+  width: 100%;
+  transition: all 0.7s ease;
+}
+
+.unreveal-leave-from {
+  position: absolute;
+  top: 0;
+}

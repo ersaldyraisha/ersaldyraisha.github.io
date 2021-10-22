@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 756.682">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-opacity="0"/>
+      <stop offset="1" stop-opacity="0.31"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_2" data-name="Group 2" transform="translate(0 -745)">
+    <rect id="Rectangle_5" data-name="Rectangle 5" class="cls-1" width="1920" height="727" transform="translate(0 745)"/>
+    <path id="Path_1" data-name="Path 1" d="M0,1000.334s152.866-18.83,246.938,54.136,192.847,23.537,270.456,141.224,75.257,169.469,261.049,162.407,89.368-32.952,453.9,131.809c129.407,58.49,350.863,20.469,394.159-69.237,40.261-83.418,107.6-58.378,174.267-62.572,82-5.158,119.236-136.318,119.236-136.318v387.9H0Z" transform="translate(0 -108)"/>
+  </g>
+</svg>

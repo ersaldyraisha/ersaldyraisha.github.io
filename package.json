@@ -1,0 +1,35 @@
+{
+  "name": "ersaldyraisha",
+  "version": "2.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "lint:js": "eslint --ext .js,.vue src"
+  },
+  "dependencies": {
+    "@yeger/vue-masonry-wall": "^3.0.4",
+    "axios": "^0.23.0",
+    "firebase": "^9.1.3",
+    "sass": "^1.43.2",
+    "scrollreveal": "^4.0.9",
+    "vue": "^3.2.16",
+    "vue-router": "^4.0.0",
+    "vuex": "^4.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.9.3",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^7.18.0",
+    "prettier": "2.4.1",
+    "vite": "^2.6.4"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "singleQuote": true,
+    "endOfLine": "auto"
+  }
+}

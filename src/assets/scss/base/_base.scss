@@ -1,0 +1,60 @@
+:root {
+  --font-xxs: 8px;
+  --font-xs: 10px;
+  --font-sm: 12px;
+  --font-md: 14px;
+  --font-lg: 16px;
+  --font-xl: 18px;
+  --font-xxl: 20px;
+}
+
+@media screen and (min-width: 360px) {
+  :root {
+    --font-xxs: 10px;
+    --font-xs: 12px;
+    --font-sm: 14px;
+    --font-md: 16px;
+    --font-lg: 18px;
+    --font-xl: 20px;
+    --font-xxl: 22px;
+  }
+}
+
+body {
+  font-family: $base-font-family;
+  font-size: var(--font-md);
+  font-weight: 500;
+  color: $color-overlay;
+  touch-action: manipulation;
+}
+
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+// Remove highlight effect when tap on mobile
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+// Button focus
+button:focus {
+  outline: 0;
+}
+
+.container {
+  position: relative;
+  width: 80%;
+  max-width: 1280px;
+
+  @media screen and (max-width: 960px) {
+    width: 90%;
+  }
+}
