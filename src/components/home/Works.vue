@@ -88,6 +88,10 @@ export default {
     pointer-events: none;
     z-index: z-index(ornament);
 
+    @media screen and (max-width: 960px) {
+      display: none;
+    }
+
     &--top {
       background: url('@/assets/img/figures/wave-top-gradient.svg') no-repeat
         bottom;
@@ -108,6 +112,10 @@ export default {
     @media screen and (max-width: 960px) {
       height: 500px;
     }
+  }
+
+  @media screen and (max-width: 960px) {
+    padding: 20px 0 60px;
   }
 }
 </style>
