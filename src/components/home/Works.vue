@@ -2,11 +2,9 @@
   <div class="works">
     <div class="container">
       <h2 class="works__title">Works</h2>
-      <masonry-wall class="cards" :items="works" :gap="30" :column-width="300">
-        <template #default="{ item }">
-          <ui-card :data="item" @card-click="onCardClick" />
-        </template>
-      </masonry-wall>
+      <ul class="works__grid">
+        <ui-card v-for="work in works" :data="work" @card-click="onCardClick" />
+      </ul>
     </div>
     <div class="works__ornament works__ornament--top" />
     <div class="works__ornament works__ornament--bottom" />
@@ -68,6 +66,16 @@ export default {
     @media screen and (max-width: 960px) {
       font-size: 30px;
       margin-bottom: 20px;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    @media screen and (max-width: 960px) {
+      grid-template-columns: 1fr 1fr;
     }
   }
 

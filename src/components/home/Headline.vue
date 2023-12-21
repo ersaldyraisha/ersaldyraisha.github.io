@@ -72,7 +72,6 @@
   display: flex;
   justify-content: center;
   height: 1300px;
-  // to-do: add parallax to contour bg
   background: url('@/assets/img/figures/contour.jpg') no-repeat right;
   background-size: cover;
   animation: slide-left 2s both;
