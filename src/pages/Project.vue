@@ -76,29 +76,11 @@ export default {
     const store = useStore();
     const projectDetail = computed(() => store.getters.selectedWork);
 
-    const initScrollReveal = async () => {
-      const getOption = (delay) => ({
-        delay,
-        distance: '30px',
-      });
-      const scrollInstance = ScrollReveal();
-
-      // to-do: fix outline animation not wisible with sr
-      // to-do: fix sr not shown after navigating pages
-      // await scrollInstance.reveal('.footer__text', { ...getOption(100) });
-      // await scrollInstance.reveal('.footer__button', { ...getOption(200) });
-    };
-
     onMounted(async () => {
       if (!store.getters.selectedWork) {
         store.commit('setSelectedWorkId', route.query.id);
         await store.dispatch('fetchWorks');
       }
-
-      // to-do: find better solution: wait router transition, then activate scrollReveal
-      setTimeout(() => {
-        initScrollReveal();
-      }, 500);
     });
 
     return { projectDetail };
@@ -292,7 +274,6 @@ export default {
     width: 100%;
     border-radius: 30px;
     break-inside: avoid;
-    break-after: avoid;
 
     &--thumbnail {
       padding: 0 !important;
