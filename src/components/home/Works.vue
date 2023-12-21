@@ -1,7 +1,7 @@
 <template>
   <div class="works">
     <div class="container">
-      <h2 class="works__title">Works</h2>
+      <h3 class="works__title">Works</h3>
       <ul class="works__grid">
         <ui-card v-for="work in works" :data="work" @card-click="onCardClick" />
       </ul>

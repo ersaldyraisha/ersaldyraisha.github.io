@@ -2,9 +2,9 @@
   <section class="headline">
     <div class="container">
       <div class="headline__content">
-        <p class="headline__name">Andi Ersaldy Raisha</p>
-        <h1 class="headline__title">Frontend Engineer</h1>
-        <h1 class="headline__title">UI/UX Designer</h1>
+        <h1 class="headline__name">Andi Ersaldy Raisha Pakki</h1>
+        <h2 class="headline__title">Frontend Engineer</h2>
+        <h2 class="headline__title">UI/UX Designer</h2>
       </div>
       <div class="social">
         <a
