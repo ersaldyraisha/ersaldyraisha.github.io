@@ -1,28 +1,32 @@
 <template>
-  <router-link
-    tag="li"
-    :to="{ name: 'project', query: { id: data.id } }"
-    class="card__item"
-    :style="{ backgroundColor: data.backgroundColor }"
-    @click="$emit('card-click', data)"
-  >
-    <img :src="data.img[0]" alt="project" class="card__image" />
-    <div class="card__text" :style="{ backgroundColor: data.backgroundColor }">
-      <h4 class="card__title">{{ data.name }}</h4>
-      <p class="card__description">{{ data.type }}</p>
-      <p class="card__detail">
-        {{ data.desc }}
-      </p>
-      <button class="button">
-        <span class="button__text">See more</span>
-        <img
-          class="button__icon"
-          src="@/assets/img/icons/arrow.png"
-          alt="arrow"
-        />
-      </button>
-    </div>
-  </router-link>
+  <li>
+    <router-link
+      :to="{ name: 'project', query: { id: data.id } }"
+      class="card__item"
+      :style="{ backgroundColor: data.backgroundColor }"
+      @click="$emit('card-click', data)"
+    >
+      <img :src="data.img[0]" alt="project" class="card__image" />
+      <div
+        class="card__text"
+        :style="{ backgroundColor: data.backgroundColor }"
+      >
+        <h4 class="card__title">{{ data.name }}</h4>
+        <p class="card__description">{{ data.type }}</p>
+        <p class="card__detail">
+          {{ data.desc }}
+        </p>
+        <button class="button">
+          <span class="button__text">See more</span>
+          <img
+            class="button__icon"
+            src="@/assets/img/icons/arrow.png"
+            alt="arrow"
+          />
+        </button>
+      </div>
+    </router-link>
+  </li>
 </template>
 
 <script>
