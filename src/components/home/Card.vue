@@ -54,6 +54,10 @@ $radius: 30px;
     cursor: pointer;
     overflow: hidden;
 
+    @media screen and (max-width: 960px) {
+      border-radius: 20px;
+    }
+
     @media screen and (min-width: 961px) {
       &:hover {
         .card__text {
@@ -87,8 +91,9 @@ $radius: 30px;
     object-fit: cover;
 
     @media screen and (max-width: 960px) {
-      margin-bottom: 80px;
-      height: 200px;
+      margin-bottom: 55px;
+      height: 150px;
+      border-radius: 20px;
     }
   }
 
@@ -105,8 +110,8 @@ $radius: 30px;
     transition: all 0.3s ease;
 
     @media screen and (max-width: 960px) {
-      padding: 15px 20px;
-      height: 80px;
+      padding: 8px 12px;
+      height: 55px;
     }
   }
 
@@ -114,7 +119,7 @@ $radius: 30px;
     font-size: 30px;
 
     @media screen and (max-width: 960px) {
-      font-size: 20px;
+      font-size: 16px;
     }
   }
 
@@ -123,7 +128,7 @@ $radius: 30px;
     font-weight: 400;
 
     @media screen and (max-width: 960px) {
-      font-size: 14px;
+      font-size: 12px;
     }
   }
 

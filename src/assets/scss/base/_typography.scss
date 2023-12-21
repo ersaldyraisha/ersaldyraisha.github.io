@@ -1,13 +1,6 @@
 @font-face {
   font-family: Sora;
   font-display: swap;
-  font-weight: 300;
-  src: url('@/assets/fonts/sora-300.woff');
-}
-
-@font-face {
-  font-family: Sora;
-  font-display: swap;
   font-weight: 400;
   src: url('@/assets/fonts/sora-400.woff');
 }
@@ -20,8 +13,15 @@
 }
 
 @font-face {
-  font-family: Sora;
+  font-family: Inter;
   font-display: swap;
-  font-weight: 700;
-  src: url('@/assets/fonts/sora-700.woff');
+  font-weight: 400;
+  src: url('@/assets/fonts/inter-400.woff2');
+}
+
+@font-face {
+  font-family: Inter;
+  font-display: swap;
+  font-weight: 500;
+  src: url('@/assets/fonts/inter-500.woff2');
 }
