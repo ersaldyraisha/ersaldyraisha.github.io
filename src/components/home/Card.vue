@@ -61,7 +61,7 @@ $radius: 30px;
     @media screen and (min-width: 961px) {
       &:hover {
         .card__text {
-          height: 250px;
+          height: 230px;
         }
 
         .card__detail {
@@ -69,7 +69,7 @@ $radius: 30px;
         }
 
         .card__image {
-          transform: translateY(-20px);
+          transform: translateY(-30px);
         }
 
         .button {
@@ -106,7 +106,7 @@ $radius: 30px;
     width: 100%;
     height: 112px;
     border-radius: $radius;
-    padding: 30px;
+    padding: 20px 30px;
     transition: all 0.3s ease;
 
     @media screen and (max-width: 960px) {
