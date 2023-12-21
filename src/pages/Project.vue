@@ -8,12 +8,14 @@
         <router-link to="/" class="back-button">
           <img
             src="@/assets/img/icons/arrow.png"
-            alt="back"
+            alt="Back To Homepage"
             class="back-button__icon"
           />
         </router-link>
+
         <h1 class="project__title">{{ projectDetail.name }}</h1>
-        <p class="project__type">{{ projectDetail.type }}</p>
+        <h2 class="project__type">{{ projectDetail.type }}</h2>
+
         <ul class="chips">
           <li
             v-for="item in projectDetail.tech"
@@ -23,16 +25,36 @@
             {{ item }}
           </li>
         </ul>
+
         <div class="grid">
+          <a
+            :href="projectDetail.url"
+            target="_blank"
+            class="grid__item grid__item--url"
+            v-if="projectDetail.url"
+          >
+            <div class="grid__head">
+              <h3 class="grid__title">Visit Site</h3>
+              <img
+                src="@/assets/img/icons/arrow.png"
+                alt="Visit Site"
+                class="grid__icon"
+              />
+            </div>
+            <p class="grid__content">
+              {{ projectDetail.url }}
+            </p>
+          </a>
+
           <div class="grid__item">
-            <h4 class="grid__title">Summary</h4>
+            <h3 class="grid__title">Summary</h3>
             <p class="grid__content">
               {{ projectDetail.desc }}
             </p>
           </div>
 
           <div class="grid__item">
-            <h4 class="grid__title">Project Role</h4>
+            <h3 class="grid__title">Project Role</h3>
             <p class="grid__content">
               {{ projectDetail.role }}
             </p>
@@ -265,10 +287,21 @@ export default {
     margin: 0;
   }
 
+  &__head {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__icon {
+    width: 32px;
+    height: 32px;
+    transform: rotate(90deg);
+  }
+
   &__item {
     display: block;
     margin-bottom: 30px;
-    padding: 40px;
+    padding: 32px;
     background: rgba(0, 0, 0, 0.2);
     width: 100%;
     border-radius: 30px;
@@ -279,6 +312,34 @@ export default {
       cursor: pointer;
       overflow: hidden;
       height: fit-content;
+    }
+
+    &--url {
+      position: relative;
+      background: rgba(0, 0, 0, 0.4);
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 75px;
+        height: 75px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 100px;
+        transform: scale(0.8);
+        opacity: 0;
+        transition: all 0.2s ease;
+
+        @media screen and (max-width: 960px) {
+          display: none;
+        }
+      }
+
+      &:hover::after {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
 
     @media screen and (max-width: 960px) {
@@ -310,5 +371,9 @@ export default {
       font-size: 14px;
     }
   }
+}
+
+.link {
+  text-decoration: underline;
 }
 </style>
