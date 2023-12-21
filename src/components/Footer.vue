@@ -1,7 +1,7 @@
 <template>
   <div class="footer">
     <div class="container">
-      <p class="footer__text">Let's work together</p>
+      <h3 class="footer__text">Let's work together</h3>
       <a
         target="_blank"
         href="mailto:andi.ersaldy@gmail.com"

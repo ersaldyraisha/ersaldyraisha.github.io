@@ -22,7 +22,7 @@
             :key="`tech-${projectDetail.id}-${item}`"
             class="chips__item"
           >
-            {{ item }}
+            <h4>{{ item }}</h4>
           </li>
         </ul>
 
@@ -275,7 +275,7 @@ export default {
 
 .grid {
   columns: 3 auto;
-  column-gap: 30px;
+  column-gap: 20px;
   animation: reveal-up 0.5s ease;
   animation-delay: 0.7s;
   animation-fill-mode: both;
@@ -300,7 +300,7 @@ export default {
 
   &__item {
     display: block;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     padding: 32px;
     background: rgba(0, 0, 0, 0.2);
     width: 100%;
