@@ -80,7 +80,7 @@
     margin-top: calc(50vh - 180px);
 
     @media screen and (max-width: 960px) {
-      margin-top: calc(50vh - 200px);
+      margin-top: calc(50vh - 220px);
     }
   }
 
@@ -92,6 +92,7 @@
     @media screen and (max-width: 960px) {
       font-size: 20px;
       margin-bottom: 8px;
+      animation: none;
     }
   }
 
@@ -101,12 +102,14 @@
 
     @media screen and (max-width: 960px) {
       font-size: 34px;
+      animation: none;
     }
   }
 
   @media screen and (max-width: 960px) {
-    height: 80vh;
+    height: 55vh;
     animation: none;
+    background: none;
   }
 }
 

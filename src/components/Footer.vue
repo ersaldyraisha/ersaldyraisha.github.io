@@ -29,10 +29,6 @@
   background: url('@/assets/img/figures/contour.jpg') no-repeat right;
   background-size: cover;
 
-  @media screen and (max-width: 960px) {
-    text-align: center;
-  }
-
   &__text {
     font-size: 35px;
     margin-bottom: 20px;
@@ -76,8 +72,10 @@
   }
 
   @media screen and (max-width: 960px) {
-    height: 500px;
-    padding-top: 250px;
+    height: 220px;
+    padding-top: 70px;
+    text-align: center;
+    background: none;
   }
 }
 </style>

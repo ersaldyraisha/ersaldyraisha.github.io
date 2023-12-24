@@ -14,7 +14,7 @@
         </router-link>
 
         <h1 class="project__title">{{ projectDetail.name }}</h1>
-        <h2 class="project__type">{{ projectDetail.type }}</h2>
+        <p class="project__type">{{ projectDetail.type }}</p>
 
         <ul class="chips">
           <li
@@ -22,7 +22,7 @@
             :key="`tech-${projectDetail.id}-${item}`"
             class="chips__item"
           >
-            <h4>{{ item }}</h4>
+            <p>{{ item }}</p>
           </li>
         </ul>
 
@@ -34,7 +34,7 @@
             v-if="projectDetail.url"
           >
             <div class="grid__head">
-              <h3 class="grid__title">Visit Site</h3>
+              <h2 class="grid__title">Visit Site</h2>
               <img
                 src="@/assets/img/icons/arrow.png"
                 alt="Visit Site"
@@ -47,14 +47,14 @@
           </a>
 
           <div class="grid__item">
-            <h3 class="grid__title">Summary</h3>
+            <h2 class="grid__title">Summary</h2>
             <p class="grid__content">
               {{ projectDetail.desc }}
             </p>
           </div>
 
           <div class="grid__item">
-            <h3 class="grid__title">Project Role</h3>
+            <h2 class="grid__title">Project Role</h2>
             <p class="grid__content">
               {{ projectDetail.role }}
             </p>
@@ -199,6 +199,7 @@ export default {
 
       @media screen and (max-width: 960px) {
         height: 500px;
+        display: none;
       }
     }
   }

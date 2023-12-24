@@ -28,12 +28,9 @@ export default {
         await store.dispatch('fetchWorks');
       }
 
-      // to-do: find better solution: wait all cards to be rendered, then scroll
-      setTimeout(() => {
-        homepageRef.value.scrollTo({
-          top: store.state.lastScroll,
-        });
-      }, 100);
+      homepageRef.value.scrollTo({
+        top: store.state.lastScroll,
+      });
     });
 
     return { homepageRef };

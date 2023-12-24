@@ -13,9 +13,17 @@
       >
         <h4 class="card__title">{{ data.name }}</h4>
         <p class="card__description">{{ data.type }}</p>
-        <p class="card__detail">
+
+        <ul class="chips" :style="{ color: data.backgroundColor }">
+          <li class="chips__item" v-for="role in data.tech">
+            {{ role }}
+          </li>
+        </ul>
+
+        <!-- <p class="card__detail">
           {{ data.desc }}
-        </p>
+        </p> -->
+
         <button class="button">
           <span class="button__text">See more</span>
           <img
@@ -61,7 +69,7 @@ $radius: 30px;
     @media screen and (min-width: 961px) {
       &:hover {
         .card__text {
-          height: 230px;
+          height: 200px;
         }
 
         .card__detail {
@@ -84,7 +92,7 @@ $radius: 30px;
   &__image {
     width: 100%;
     border-radius: $radius;
-    margin-bottom: 110px;
+    margin-bottom: 100px;
     object-fit: cover;
     transform: translateY(0);
     transition: transform 0.3s ease;
@@ -104,9 +112,9 @@ $radius: 30px;
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 112px;
+    height: 100px;
     border-radius: $radius;
-    padding: 20px 30px;
+    padding: 20px 30px 30px;
     transition: all 0.3s ease;
 
     @media screen and (max-width: 960px) {
@@ -126,6 +134,7 @@ $radius: 30px;
   &__description {
     font-size: 18px;
     font-weight: 400;
+    margin-bottom: 25px;
 
     @media screen and (max-width: 960px) {
       font-size: 12px;
@@ -137,12 +146,24 @@ $radius: 30px;
     margin-top: 20px;
     font-weight: 400;
     line-height: 1.5;
-    font-size: 14px;
     transition: opacity 0.2s ease;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 14px;
+  gap: 5px;
+
+  &__item {
+    background: white;
+    padding: 5px 10px;
+    border-radius: 100px;
   }
 }
 
