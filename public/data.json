@@ -1,0 +1,124 @@
+[
+  {
+    "backgroundColor": "#113cb1ff",
+    "desc": "Gramedia adalah",
+    "id": "smartlib",
+    "img": [
+      "works/smartlib.webp",
+      "works/smartlib.webp",
+      "works/smartlib.webp"
+    ],
+    "name": "SmartLib by Gramedia",
+    "role": "Front-end Development",
+    "tech": ["Next", "React", "Typescript", "Tailwind", "Monorepo"],
+    "url": "https://smartlib.gramedia.id",
+    "type": "Desktop Website"
+  },
+  {
+    "backgroundColor": "#e64800",
+    "desc": "Pegipegi was one of the most loved online travel agency (OTA) in Indonesia, with flight ticket booking as one of its revenue generator. Pegipegi Flight mobile website was developed with performance & SEO in mind, scoring high on Pagespeed index and having small JS footprints. Pegipegi flight was built with Nuxt 3 and Typescript to boost code sustainability in a pnpm monorepo environment to maximize team ownership.",
+    "id": "pgi",
+    "img": [
+      "works/pgi.jpg",
+      "works/pgi1.jpg",
+      "works/pgi2.jpg",
+      "works/pgi3.jpg"
+    ],
+    "name": "Pegipegi",
+    "role": "Front-end Development",
+    "tech": ["Nuxt", "Vue", "Typescript", "Tailwind", "Monorepo"],
+    "type": "Mobile Website"
+  },
+  {
+    "backgroundColor": "#677178",
+    "desc": "Audiobrawl is a virtual headphone tester and audio comparison tool. I spent my free time developing Audiobrawl to satisfy my passion as an audiophile. Audiobrawl uses Youtube embed as the content source, and hosted via Firebase hosting.",
+    "id": "audiobrawl",
+    "img": [
+      "works/audiobrawl.jpg",
+      "works/audiobrawl1.jpg",
+      "works/audiobrawl2.jpg"
+    ],
+    "name": "Audiobrawl",
+    "role": "UI Design, Front-end Development",
+    "tech": ["Vue", "Typescript", "Tailwind", "Firebase"],
+    "type": "Website",
+    "url": "https://audiobrawl.web.app"
+  },
+  {
+    "backgroundColor": "#222",
+    "desc": "Seikonator is a simple Seiko watch modification generator. As one of my pet project, I used my time while developing this project to familiarize myself with React, Typescript, and Tailwind library. Seikonator is hosted via Firebase hosting.",
+    "id": "seikonator",
+    "img": [
+      "works/seikonator.jpg",
+      "works/seikonator1.jpg",
+      "works/seikonator2.jpg",
+      "works/seikonator3.jpg"
+    ],
+    "name": "Seikonator",
+    "role": "UI Design, Front-end Development",
+    "tech": ["React", "Typescript", "Tailwind", "Firebase"],
+    "type": "Website",
+    "url": "https://seikonator.web.app"
+  },
+  {
+    "backgroundColor": "#0977c3",
+    "desc": "Institut Teknologi Sepuluh Nopember Surabaya is one of the best if not the best public tech university in Indonesia. As a highly claimed tech university, the ease of information access is a must to all of its stakeholder. myITS is a mobile application based on Android and iOS platform to accomodate all of the information needed for student, lecturer, staff, and parent/guardian ranging from academic information for student and lecturer to employee affair for staff.",
+    "id": "myits",
+    "img": [
+      "works/myits.jpg",
+      "works/myits1.jpg",
+      "works/myits2.jpg",
+      "works/myits3.jpg",
+      "works/myits4.jpg"
+    ],
+    "name": "myITS",
+    "role": "UI Design, UX Research",
+    "tech": ["Java (Android)", "Adobe Ps"],
+    "type": "Mobile Application"
+  },
+  {
+    "backgroundColor": "#BF734D",
+    "desc": "Indofood Masakapaya.com help moms to quickly find interesting personalized recipes. Bringing awesome features that help users to search for recipes and decrease their cognitive load. Masakapaya.com is one of the project I`ve done under the internship period at Suitmedia Software Agency as a front-end developer.",
+    "id": "masakapaya",
+    "img": [
+      "works/masakapaya.jpg",
+      "works/masakapaya1.jpg",
+      "works/masakapaya2.jpg",
+      "works/masakapaya3.jpg"
+    ],
+    "name": "Masakapaya",
+    "role": "Front-end Development",
+    "tech": ["AngularJS"],
+    "type": "Website"
+  },
+  {
+    "backgroundColor": "#D93335",
+    "desc": "Amman is a crowdsourced personal security application prototype based on Android platform that ensure your safety anywhere you go. Amman will notify you as you go somewhere with a high number of crime activities and will let you get emergency service if the unwanted thing happen. This project has won several awards such as a silver medal at Multimedia & Game Event ITS 2016 and finalist at Go-Jek GO-HACKATHON.",
+    "id": "amann",
+    "img": [
+      "works/amann.jpg",
+      "works/amann1.jpg",
+      "works/amann2.jpg",
+      "works/amann3.jpg"
+    ],
+    "name": "Amann",
+    "role": "UI Design, Front-end Development",
+    "tech": ["Java (Android)", "Adobe Xd"],
+    "type": "Mobile Application"
+  },
+  {
+    "backgroundColor": "#619C51",
+    "desc": "Every big event needs a good website. Schematics is one of the biggest annual event in Surabaya held by Himpunan Mahasiswa Teknik Computer Informatika  ITS Surabaya, consisting a national programming contest (NPC), a national logic competition (NLC), a national seminaar of technology (NST), and a concert with various art expo (REEVA). The website features not only for promotion purpose but also ticketing and registration purpose.",
+    "id": "schematics",
+    "img": [
+      "works/schematics.jpg",
+      "works/schematics1.jpg",
+      "works/schematics2.jpg",
+      "works/schematics3.jpg"
+    ],
+    "name": "Schematics",
+    "role": "UI Design, Front-end Development",
+    "tech": ["PHP", "Adobe Ps"],
+    "type": "Website"
+  }
+]

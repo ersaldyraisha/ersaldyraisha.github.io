@@ -3,7 +3,12 @@
     <div class="container">
       <h3 class="works__title">Works</h3>
       <ul class="works__grid">
-        <ui-card v-for="work in works" :data="work" @card-click="onCardClick" />
+        <ui-card
+          v-for="work in works"
+          :key="work.id"
+          :data="work"
+          @card-click="onCardClick"
+        />
       </ul>
     </div>
     <div class="works__ornament works__ornament--top" />

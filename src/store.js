@@ -1,6 +1,5 @@
 import { createStore } from 'vuex';
 import axios from 'axios';
-import endpoints from './endpoints';
 
 export default createStore({
   state() {
@@ -28,7 +27,7 @@ export default createStore({
   },
   actions: {
     async fetchWorks({ commit }) {
-      const response = await axios.get(`${endpoints.fireDB}/works.json`);
+      const response = await axios.get('data.json');
       commit('setWorks', response.data);
     },
   },

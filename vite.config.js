@@ -4,7 +4,64 @@ import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    {
+      name: 'preload-contour-image',
+      transformIndexHtml: {
+        enforce: 'pre',
+        transform() {
+          return [
+            {
+              tag: 'link',
+              attrs: {
+                rel: 'preload',
+                as: 'image',
+                href: '/src/assets/img/figures/contour.jpg',
+              },
+              injectTo: 'head',
+            },
+            {
+              tag: 'link',
+              attrs: {
+                rel: 'preload',
+                as: 'image',
+                href: '/src/assets/img/figures/wave-top.svg',
+              },
+              injectTo: 'head',
+            },
+            {
+              tag: 'link',
+              attrs: {
+                rel: 'preload',
+                as: 'image',
+                href: '/src/assets/img/figures/wave-bottom.svg',
+              },
+              injectTo: 'head',
+            },
+            {
+              tag: 'link',
+              attrs: {
+                rel: 'preload',
+                as: 'image',
+                href: '/src/assets/img/figures/wave-top-gradient.svg',
+              },
+              injectTo: 'head',
+            },
+            {
+              tag: 'link',
+              attrs: {
+                rel: 'preload',
+                as: 'image',
+                href: '/src/assets/img/figures/wave-bottom-gradient.svg',
+              },
+              injectTo: 'head',
+            },
+          ];
+        },
+      },
+    },
+  ],
   resolve: {
     alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],
   },

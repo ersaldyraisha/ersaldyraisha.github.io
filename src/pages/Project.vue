@@ -28,10 +28,10 @@
 
         <div class="grid">
           <a
+            v-if="projectDetail.url"
             :href="projectDetail.url"
             target="_blank"
             class="grid__item grid__item--url"
-            v-if="projectDetail.url"
           >
             <div class="grid__head">
               <h2 class="grid__title">Visit Site</h2>
@@ -61,7 +61,7 @@
           </div>
 
           <a
-            v-for="(item, index) in projectDetail?.img ?? []"
+            v-for="(item, index) in imgUrls"
             :key="`image-${projectDetail.id}-${index}`"
             class="grid__item grid__item--thumbnail"
             :href="item"
@@ -97,6 +97,17 @@ export default {
     const store = useStore();
     const projectDetail = computed(() => store.getters.selectedWork);
 
+    const imgUrls = computed(() => {
+      return projectDetail.value.img.map((image) => {
+        if (!image) return '';
+        try {
+          return new URL(`../assets/img/${image}`, import.meta.url).href;
+        } catch (e) {
+          return '';
+        }
+      });
+    });
+
     onMounted(async () => {
       if (!store.getters.selectedWork) {
         store.commit('setSelectedWorkId', route.query.id);
@@ -104,7 +115,7 @@ export default {
       }
     });
 
-    return { projectDetail };
+    return { projectDetail, imgUrls };
   },
 };
 </script>

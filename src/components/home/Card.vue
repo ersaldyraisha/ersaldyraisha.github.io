@@ -6,7 +6,7 @@
       :style="{ backgroundColor: data.backgroundColor }"
       @click="$emit('card-click', data)"
     >
-      <img :src="data.img[0]" alt="project" class="card__image" />
+      <img :src="imgUrl" alt="project" class="card__image" />
       <div
         class="card__text"
         :style="{ backgroundColor: data.backgroundColor }"
@@ -15,14 +15,14 @@
         <p class="card__description">{{ data.type }}</p>
 
         <ul class="chips" :style="{ color: data.backgroundColor }">
-          <li class="chips__item" v-for="role in data.tech">
-            {{ role }}
+          <li
+            v-for="tech in data.tech"
+            :key="`tech-stack-${tech}-${data.id}`"
+            class="chips__item"
+          >
+            {{ tech }}
           </li>
         </ul>
-
-        <!-- <p class="card__detail">
-          {{ data.desc }}
-        </p> -->
 
         <button class="button">
           <span class="button__text">See more</span>
@@ -38,12 +38,28 @@
 </template>
 
 <script>
+import { computed } from 'vue';
+
 export default {
   props: {
     data: {
       type: Object,
       required: true,
     },
+  },
+  setup(props) {
+    const imgUrl = computed(() => {
+      const file = props.data.img[0];
+
+      if (!file) return '';
+      try {
+        return new URL(`../../assets/img/${file}`, import.meta.url).href;
+      } catch (e) {
+        return '';
+      }
+    });
+
+    return { imgUrl };
   },
 };
 </script>
@@ -77,7 +93,8 @@ $radius: 30px;
         }
 
         .card__image {
-          transform: translateY(-30px);
+          transform: translateY(-30px) scale(1.05);
+          opacity: 0.5;
         }
 
         .button {
@@ -95,7 +112,7 @@ $radius: 30px;
     margin-bottom: 100px;
     object-fit: cover;
     transform: translateY(0);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.5s ease;
     object-fit: cover;
 
     @media screen and (max-width: 960px) {
@@ -124,7 +141,9 @@ $radius: 30px;
   }
 
   &__title {
-    font-size: 30px;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 5px;
 
     @media screen and (max-width: 960px) {
       font-size: 16px;
