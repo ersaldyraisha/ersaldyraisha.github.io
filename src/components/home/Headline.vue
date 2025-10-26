@@ -52,7 +52,7 @@
 import { ref, computed, onMounted, onUnmounted } from 'vue';
 
 const titles = [
-  'Seasoned Frontend Developer',
+  'Seasoned Front-End Developer',
   'Passionate UI/UX Enthusiast',
   'Full-Time Learner',
 ];
