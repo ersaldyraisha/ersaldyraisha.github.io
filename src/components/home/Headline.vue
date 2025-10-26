@@ -99,7 +99,7 @@ onUnmounted(() => {
   display: flex;
   justify-content: center;
   height: 1300px;
-  background: url('@/assets/img/figures/contour.jpg') no-repeat right;
+  background: url('@/assets/img/figures/contour.webp') no-repeat right;
   background-size: cover;
   animation: slide-left 2s both;
 

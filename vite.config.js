@@ -17,7 +17,7 @@ export default defineConfig({
               attrs: {
                 rel: 'preload',
                 as: 'image',
-                href: '/src/assets/img/figures/contour.jpg',
+                href: '/src/assets/img/figures/contour.webp',
               },
               injectTo: 'head',
             },

@@ -26,7 +26,7 @@
   background: $color-base;
   height: 1000px;
   padding-top: 550px;
-  background: url('@/assets/img/figures/contour.jpg') no-repeat right;
+  background: url('@/assets/img/figures/contour.webp') no-repeat right;
   background-size: cover;
 
   &__text {
