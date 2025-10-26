@@ -85,11 +85,12 @@ $radius: 30px;
     @media screen and (min-width: 961px) {
       &:hover {
         .card__text {
-          height: 220px;
+          padding: 30px;
+          height: 240px;
         }
 
         .card__image {
-          transform: translateY(-30px) scale(1.05);
+          transform: translateY(-50px) scale(1.08);
           opacity: 0.5;
         }
 
@@ -137,7 +138,7 @@ $radius: 30px;
   }
 
   &__title {
-    font-size: 26px;
+    font-size: 24px;
     font-weight: bold;
     margin-bottom: 5px;
     white-space: nowrap;
@@ -155,7 +156,7 @@ $radius: 30px;
   &__description {
     font-size: 18px;
     font-weight: 400;
-    margin-bottom: 25px;
+    margin-bottom: 28px;
 
     @media screen and (max-width: 960px) {
       font-size: 12px;

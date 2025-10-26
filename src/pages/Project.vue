@@ -164,6 +164,7 @@ export default {
     margin-top: 100px;
     margin-bottom: 5px;
     font-size: 70px;
+    font-weight: bold;
     animation: reveal-up 0.5s ease;
     animation-delay: 0.3s;
     animation-fill-mode: both;
@@ -368,6 +369,7 @@ export default {
   &__title {
     font-size: 30px;
     margin-bottom: 20px;
+    font-weight: bold;
 
     @media screen and (max-width: 960px) {
       font-size: 18px;

@@ -86,7 +86,7 @@
       "works/masakapaya2.webp",
       "works/masakapaya3.webp"
     ],
-    "name": "Masakapaya",
+    "name": "Masakapaya by Indofood",
     "role": "Front-end Development",
     "tech": ["AngularJS"],
     "type": "Website"
@@ -107,7 +107,7 @@
     "type": "Mobile Application"
   },
   {
-    "backgroundColor": "#619C51",
+    "backgroundColor": "#3a9e3c",
     "desc": "Every big event needs a good website. Schematics is one of the biggest annual event in Surabaya held by Himpunan Mahasiswa Teknik Computer Informatika  ITS Surabaya, consisting a national programming contest (NPC), a national logic competition (NLC), a national seminaar of technology (NST), and a concert with various art expo (REEVA). The website features not only for promotion purpose but also ticketing and registration purpose.",
     "id": "schematics",
     "img": [
