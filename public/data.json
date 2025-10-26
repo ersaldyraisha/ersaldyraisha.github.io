@@ -1,7 +1,7 @@
 [
   {
     "backgroundColor": "#113cb1ff",
-    "desc": "Gramedia adalah",
+    "desc": "SmartLib by Gramedia is a digital library service for organizations, schools, companies, and communities. SmartLib by Gramedia was developed with user experience & content security as the focus points. Nuxt 14 was used to build the web portal & Flutter was used to build the mobile client app.",
     "id": "smartlib",
     "img": [
       "works/smartlib.webp",
@@ -11,7 +11,7 @@
     "name": "SmartLib by Gramedia",
     "role": "Front-end Development",
     "tech": ["Next", "React", "Typescript", "Tailwind", "Monorepo"],
-    "url": "https://smartlib.gramedia.id",
+    "url": "https://smartlib.gramedia.com",
     "type": "Desktop Website"
   },
   {

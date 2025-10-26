@@ -3,8 +3,11 @@
     <div class="container">
       <div class="headline__content">
         <h1 class="headline__name">Andi Ersaldy Raisha Pakki</h1>
-        <h2 class="headline__title">Frontend Engineer</h2>
-        <h2 class="headline__title">UI/UX Designer</h2>
+        <transition name="fade-slide" mode="out-in">
+          <h2 :key="currentTitle" class="headline__title">
+            {{ currentTitle }}
+          </h2>
+        </transition>
       </div>
       <div class="social">
         <a
@@ -44,6 +47,30 @@
     </div>
   </section>
 </template>
+
+<script setup>
+import { ref, computed, onMounted, onUnmounted } from 'vue';
+
+const titles = [
+  'Seasoned Frontend Developer',
+  'Passionate UI/UX Enthusiast',
+  'Full-Time Learner',
+];
+
+const index = ref(0);
+const currentTitle = computed(() => titles[index.value]);
+
+let timer;
+onMounted(() => {
+  timer = setInterval(() => {
+    index.value = (index.value + 1) % titles.length;
+  }, 4000);
+});
+
+onUnmounted(() => {
+  if (timer) clearInterval(timer);
+});
+</script>
 
 <style lang="scss" scoped>
 @keyframes slide-left {
@@ -98,11 +125,12 @@
 
   &__title {
     font-size: 70px;
-    animation: reveal 0.8s ease 0.2s both;
+    font-weight: bold;
+    max-width: 800px;
+    height: 150px;
 
     @media screen and (max-width: 960px) {
       font-size: 34px;
-      animation: none;
     }
   }
 
@@ -111,6 +139,21 @@
     animation: none;
     background: none;
   }
+}
+
+.fade-slide-enter-active,
+.fade-slide-leave-active {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.fade-slide-enter-from,
+.fade-slide-leave-to {
+  opacity: 0;
+  transform: translateY(30%);
+}
+.fade-slide-enter-to,
+.fade-slide-leave-from {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .social {

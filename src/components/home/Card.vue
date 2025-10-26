@@ -85,11 +85,7 @@ $radius: 30px;
     @media screen and (min-width: 961px) {
       &:hover {
         .card__text {
-          height: 200px;
-        }
-
-        .card__detail {
-          opacity: 1;
+          height: 220px;
         }
 
         .card__image {
@@ -131,7 +127,7 @@ $radius: 30px;
     width: 100%;
     height: 100px;
     border-radius: $radius;
-    padding: 20px 30px 30px;
+    padding: 20px 30px;
     transition: all 0.3s ease;
 
     @media screen and (max-width: 960px) {
@@ -144,6 +140,12 @@ $radius: 30px;
     font-size: 26px;
     font-weight: bold;
     margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 0 0 auto; // or flex-shrink: 0;
+    line-height: 1.2; // ensure non-zero line box
+    width: 100%;
 
     @media screen and (max-width: 960px) {
       font-size: 16px;
@@ -158,18 +160,6 @@ $radius: 30px;
     @media screen and (max-width: 960px) {
       font-size: 12px;
     }
-  }
-
-  &__detail {
-    opacity: 0;
-    margin-top: 20px;
-    font-weight: 400;
-    line-height: 1.5;
-    transition: opacity 0.2s ease;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
   }
 }
 
